@@ -7,7 +7,7 @@ For Document Databases denormalizing the data into flat data WITH duplicated fie
 **Rationale**:
 
 - Lower latency - Selecting from a single collection instead of using IDs in results to get data from other collections speeds up queries and also insertion of data.
-- Duplicate values - Document database often do not support joins and even if they do, it is not supported in simple queries.
+- Duplicate values - Document databases often do not support joins and even if they do, it is not supported in simple queries.
 - Nested - Document databases support nested objects and arrays and using these in indices, take advantage of this
 - Number of fields in document is not an issue - Since Document databases enable projection, when reading you can select with fields to fetch from the database to reduce IO bandwidth.
 

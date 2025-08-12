@@ -22,11 +22,11 @@ e307068f-6405-4190-8298-a3f9003f0f8f | John | Smith | 2000-01-01 | 2025-08-01T10
 
 Prefer storing table with sensitive data in a relational database and not in same database as the rest of the data.
 
-Columnar database usually do not have database generated GUIDs/UUIDs or auto-increment IDs, if they do, then still do NOT use them.
+Columnar databases usually do not have database generated GUIDs/UUIDs or auto-increment IDs, if they do, then still do NOT use them.
 
 ## Variant / JSON column
 
-Some columnar database do not enforce a pre-defined struct for sub objects / array items (e.g. RedShift and Snowflake), do not abuse this for storing different object types / classes / message schemas in the same table under a variant / JSON column. Different types should be in different tables or columns (however, polymorphism within reason is OK).
+Some columnar databases do not enforce a pre-defined struct for sub objects / array items (e.g. RedShift and Snowflake), do not abuse this for storing different object types / classes / message schemas in the same table under a variant / JSON column. Different types should be in different tables or columns (however, polymorphism within reason is OK).
 
 ## Choosing primary keys and Naming columns
 
