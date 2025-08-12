@@ -56,6 +56,107 @@ vehicle_license_plate | manufacturer
 
 You may have notice some practices above that you are not used to regarding IDs...
 
+## Creating tables for classes
+
+When you map classes to new tables, if your classes have inheritance, as in classes B and C are more specific types of class A,e.g. these classes:
+
+```csharp
+class A
+{
+    Guid Id { get; set; }
+    string name { get; set; }
+}
+
+class B: A
+{
+    int ordersCount { get; set; }
+}
+
+class C: A
+{
+    int salesCount { get; set; }
+}
+```
+
+you can map this to tables via:
+
+**Table per hierarchy**:
+
+Table A:
+
+Id | name | class_type | ordersCount | salesCount
+--- | --- | --- | --- | ---
+d731c802-4dc2-49aa-be94-b909613c0b97 | beta | B | 10 | null
+ea0b468b-ecbd-414b-8631-12662a56a3ce | gamma | C | null | 20
+
+or via:
+
+**Table per class**:
+
+Table A:
+
+Id | name
+--- | ---
+d731c802-4dc2-49aa-be94-b909613c0b97 | beta
+ea0b468b-ecbd-414b-8631-12662a56a3ce | gamma
+
+Table B:
+
+Id | ordersCount
+--- | ---
+d731c802-4dc2-49aa-be94-b909613c0b97 | 10
+
+Table C:
+
+Id | salesCount
+--- | ---
+ea0b468b-ecbd-414b-8631-12662a56a3ce | 20
+
+or via any combination of these two.
+
+For both efficiency of queries and readability in database, prefer table per hierarchy whenever possible, or consider if you are modelling you data correctly from the get-go, e.g.
+
+```mermaid
+classDiagram
+Item <|-- Folder
+Item <|-- File
+Folder *-- Item
+```
+
+could be modelled, for more efficient data storage as:
+
+```csharp
+class File
+{
+    List<string> Path { get; set; }
+    string Name { get; set; }
+}
+```
+
+and then you can transform the List<string> as a single string with `/` delimiter, so that you can store this as"
+
+Table Files:
+
+file_id | path | name
+--- | --- | ---
+111cc19b-02cc-46fd-80a7-c54515bd0973 | root/folder1/folder2 | file3.ext
+
+then you can find all files in folder by querying for all files with a given path.
+
+Or, if paths are very long, e.g. with `List<Guid>` instead of `List<string>`:
+
+Table Folders:
+
+folder_id | path
+--- | ---
+be337b9f-a86f-4684-84b4-9ac483bfc890 | 0678e356-caf7-4d89-b38c-04ab9758554e/9196d462-3de8-4f09-a839-89bddf6d0ce9/c725691e-0a65-4ae8-9f00-8369fa7aa07e
+
+Table Files:
+
+file_id | folder_id | name
+--- | --- | ---
+111cc19b-02cc-46fd-80a7-c54515bd0973 | be337b9f-a86f-4684-84b4-9ac483bfc890 | file3.ext
+
 ## Selecting primary keys
 
 The best practices for selecting primary keys may oppose many rules you were taught, however, these rules are based a lot of experience with legacy databases and new database, learning from issues caused by incorrect modelling, learning from abilities gained by correct modelling.
