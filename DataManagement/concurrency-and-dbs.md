@@ -12,5 +12,5 @@
 
 **Navigation:**
 
-- Previous: [Data modelling summary](./data-modelling-summary.md)
+- Previous: [Indexing](./indexing.md)
 - Next: [Concurrency and relational databases](./concurrency-relational-dbs.md)

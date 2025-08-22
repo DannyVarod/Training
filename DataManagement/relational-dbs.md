@@ -239,6 +239,7 @@ For best practices on using see [data modelling](./data-modelling-relational-dbs
 **See also:**
 
 - [Data modelling and relational databases](./data-modelling-relational-dbs.md)
+- [Indexing](./indexing.md)
 - [Concurrency and relational databases](./concurrency-relational-dbs.md)
 
 ---

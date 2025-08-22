@@ -50,6 +50,10 @@ While Document database do enable storing any documents with any structure toget
 
 Polymorphism is OK, you can store similar classes in the same collection if they are used in the same way, however, do not over do this. If you only have one collection for all your object types, you are very likely misusing the database.
 
+**See also:**
+
+- [Indexing](./indexing.md)
+
 ---
 
 **Navigation:**
