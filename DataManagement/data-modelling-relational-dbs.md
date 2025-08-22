@@ -236,6 +236,10 @@ Whenever applicable use ISO standards for IDs.
 - **Microservice Independence**: Services can generate IDs without coordination
 - **Backup/Restore Simplicity**: No sequence/identity column complications during recovery
 
+**See also:**
+
+- [Indexing](./indexing.md)
+
 ---
 
 **Navigation:**

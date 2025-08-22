@@ -201,6 +201,7 @@ For best practices on using see [data modelling](./data-modelling-document-dbs.m
 **See also:**
 
 - [Data modelling and document databases](./data-modelling-document-dbs.md)
+- [Indexing](./indexing.md)
 - [Concurrency and document databases](./concurrency-document-dbs.md)
 
 ---

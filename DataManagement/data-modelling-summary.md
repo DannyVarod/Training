@@ -308,4 +308,4 @@ Additional hidden costs:
 **Navigation:**
 
 - Previous: [Data modelling and distributed file storage](./data-modelling-distributed-file-storage.md)
-- Next: [Concurrency and databases](./concurrency-and-dbs.md)
+- Next: [Indexing](./indexing.md)
