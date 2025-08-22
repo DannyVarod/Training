@@ -1,5 +1,15 @@
 # Data modelling and messages
 
+## Data structure
+
+Prefer a single message structure per queue/topic. Avoid basing messages on classes with inheritance.
+
+Do NOT remodel inheritance as composition.
+
+If you do have inheritance, model the messages the same as in the table-per-hierarchy strategy [see data modelling and relational databases](./data-modelling-relational-dbs.md)
+
+If you have some variance in structure, use a flexible type like JSON, not Avro as serialization type.
+
 ## Data serialization type and compression
 
 In messages, it is important to take the message structure and the technologies that may be used into account when choosing how to serialize data.

@@ -31,11 +31,11 @@ CPUs (Central Processing Units) and GPUs (Graphical Processing Units) work the m
 
 - **Byte** or **Char**: an 8-bit (1 Byte) whole number which can be unsigned (range 0...255) or signed (range -128...127) and can also be used to represent a character single or language selection in a string or a part of a character, depending on the text encoding (languages) of the string e.g. for UTF-8 or ASCII
 
-- **Short**: a 16-bit (2 Byte) whole number which can be unsigned (range 0...FILL) or signed (range -FILL...FILL), this also be used to represent a character or language selection in a multilingual string, depending on the text encoding (languages) of the string e.g. for UTF-16
+- **Short**: a 16-bit (2 Byte) whole number which can be unsigned (range 0...65535) or signed (range -32768...32767), this also be used to represent a character or language selection in a multilingual string, depending on the text encoding (languages) of the string e.g. for UTF-16
 
-- **Int**: a 32-bit (4 Byte) whole number which can be unsigned (range 0...FILL) or signed (range -FILL...FILL), this also be used to represent a character in a multilingual, depending on the text encoding (languages) of the string e.g. for UTF-32
+- **Int**: a 32-bit (4 Byte) whole number which can be unsigned (range 0...4294967295) or signed (range -2147483648...2147483647), this also be used to represent a character in a multilingual, depending on the text encoding (languages) of the string e.g. for UTF-32
 
-- **Long**: a 64-bit (8 Byte) whole number which can be unsigned (range 0...FILL) or signed (range -FILL...FILL)
+- **Long**: a 64-bit (8 Byte) whole number which can be unsigned (range 0...18446744073709551615) or signed (range -9223372036854775808...9223372036854775807)
 
 - **Float** (or single precision floating point number): a 32-bit (4 Byte) floating point number where 1 bit represents the sign +/-, 23 bits represent a whole number (called the fraction) and 8 bits represent the exponent e.g. - 1001 exponent -3 ==> -1001e-3 = -1.001 or + 7 exponent +5 = 700000. 32-bit floats are smaller and faster for inaccurate calculations, however, due to their limited resolution, the numbers you store will not be accurate e.g. instead of 1.0 you may get a number like 0.999999999999999 or 1.00000000000001.
 
