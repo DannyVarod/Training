@@ -14,6 +14,7 @@ This section provides a comprehensive comparison of different database and stora
 | **Message Queues** | RabbitMQ, SQS, Service Bus | Point-to-point messaging | Reliable delivery, load balancing, dead letter handling | No replay, single consumer per message, no history | Task processing, job queues, reliable messaging | Event streaming, multiple consumers, message replay |
 | **Message Topics** | Kafka, MSK, Event Hubs | Event streaming and pub-sub | Multiple consumers, replay capability, high throughput | Complex setup, no cross-partition ordering, operational overhead | Event sourcing, real-time analytics, log aggregation | Simple messaging, low latency responses, small scale |
 | **Distributed File Storage** | S3, HDFS, Azure Blob | Large file and binary storage | Massive scale, cost-effective, durability | High latency, eventual consistency, no queries | Backup, media storage, data lakes, archiving | Frequent updates, low latency access, structured queries |
+| **Vector** | ChromaDB, Pinecone, Weaviate | AI/ML similarity search and embeddings | Fast similarity search, purpose-built for AI/ML, advanced indexing | Limited to similarity queries, memory intensive, approximate results | Semantic search, recommendations, RAG systems, content similarity | Exact match queries, traditional relational operations, small datasets |
 
 ## Decision Matrix
 
