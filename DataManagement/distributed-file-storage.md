@@ -56,4 +56,4 @@ When NOT to use:
 **Navigation:**
 
 - Previous: [Message Topics](./message-topics.md)
-- Next: [Database types summary](./database-types-summary.md)
+- Next: [Vector Databases](./vector-dbs.md)

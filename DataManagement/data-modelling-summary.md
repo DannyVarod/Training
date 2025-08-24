@@ -307,5 +307,5 @@ Additional hidden costs:
 
 **Navigation:**
 
-- Previous: [Data modelling and distributed file storage](./data-modelling-distributed-file-storage.md)
+- Previous: [Data modelling and vector databases](./data-modelling-vector-dbs.md)
 - Next: [Indexing](./indexing.md)

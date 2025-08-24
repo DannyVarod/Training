@@ -94,6 +94,42 @@ db.users.find({ "status": "active", "createdDate": { $gte: ISODate("2024-01-01")
 db.users.find({ "createdDate": { $gte: ISODate("2024-01-01") } }); // Cannot use index efficiently
 ```
 
+#### Deep Index
+
+If you have documents with nested objects or arrays, you can create indices on these nested fields.
+
+For example, given the following document structure in a `students` collection:
+
+```javascript
+
+```JSON
+{
+    "student_id": "e307068f-6405-4190-8298-a3f9003f0f8f",
+    "first_name": "John",
+    "last_name": "Smith",
+    "birthdate": "2000-01-01",
+    "created_at": "2025-08-01T12:00:00.000",
+    "updated_at": "2025-08-07T22:00:00",
+    "email_addresses": [
+        "john.smith.372@somecollege.edu",
+        "john.smithy.y2k@gmail.com"
+    ],
+    "vehicles": [
+        {"vehicle_license_plate": 111111111, "manufacturer": "Honda"},
+        {"vehicle_license_plate": 222222222, "manufacturer": "Volkswagen"}
+    ]
+}
+```
+
+You can create indices on nested fields like this:
+
+```javascript
+db.users.createIndex({ "email_addresses": 1 }, { background: true }); // Index on array field
+db.users.createIndex({ "vehicles.vehicle_license_plate": 1 }, { background: true }); // Index on nested object field
+```
+
+This enables efficient queries on the nested fields of the de-normalized documents.
+
 #### Text Index
 
 ```javascript

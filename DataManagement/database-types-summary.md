@@ -128,5 +128,5 @@ This section provides a comprehensive comparison of different database and stora
 
 **Navigation:**
 
-- Previous: [Distributed File Storage](./distributed-file-storage.md)
+- Previous: [Vector Databases](./vector-dbs.md)
 - Next: [Data modelling and database types](./data-modelling-db-types.md)
