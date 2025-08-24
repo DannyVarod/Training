@@ -29,18 +29,19 @@ var collection = client.GetDatabase("MyApp").GetCollection<AccountForMongo>("Acc
 
 // Insert account
 Console.WriteLine(JsonSerializer.Serialize(initialAccount));
-collection.InsertOne(initialAccount);
+await collection.InsertOneAsync(initialAccount);
 
 int requests = 1000;
-await Task.Run(() => Parallel.For(0, requests, async i =>
+var tasks = Enumerable.Range(0, requests).Select(async i =>
 {
     var account = await collection.AsQueryable()
         .Where(a => a._id == initialAccount._id)
         .SingleAsync();
     account.SavingsBalance -= 100.0M;
     account.CheckingBalance += 100.0M;
-    collection.ReplaceOne<AccountForMongo>(a => a._id == initialAccount._id, account);
+    await collection.ReplaceOneAsync<AccountForMongo>(a => a._id == initialAccount._id, account);
 });
+await Task.WhenAll(tasks);
 ```
 
 ### Atomic Operations
@@ -68,17 +69,18 @@ var collection = client.GetDatabase("MyApp").GetCollection<AccountForMongo>("Acc
 
 // Insert account
 Console.WriteLine(JsonSerializer.Serialize(initialAccount));
-collection.InsertOne(initialAccount);
+await collection.InsertOneAsync(initialAccount);
 
 int requests = 1000;
-await Task.Run(() => Parallel.For(0, requests, async i =>
+var tasks = Enumerable.Range(0, requests).Select(async i =>
 {
     // Atomic update operations
     var update1 = Builders<AccountForMongo>.Update.Inc<decimal>(a => a.SavingsBalance, -100.0M);
     var update2 = Builders<AccountForMongo>.Update.Inc<decimal>(a => a.CheckingBalance, 100.0M);
     var combinedUpdate = Builders<AccountForMongo>.Update.Combine(update1, update2);
-    collection.UpdateOne<AccountForMongo>(a => a._id == initialAccount._id, combinedUpdate);
+    await collection.UpdateOneAsync<AccountForMongo>(a => a._id == initialAccount._id, combinedUpdate);
 });
+await Task.WhenAll(tasks);
 ```
 
 ### Testing the result

@@ -65,7 +65,7 @@ using (var context = new SqlDbContext(this.sqlConnectionString))
 
 // Run 1000 concurrent requests moving money between accounts
 int requests = 1000;
-await Task.Run(() => Parallel.For(0, requests, async i =>
+var tasks = Enumerable.Range(0, requests).Select(async i =>
 {
     // Update with optimistic concurrency retry
     var attempts = 0;
@@ -75,7 +75,7 @@ await Task.Run(() => Parallel.For(0, requests, async i =>
         {
             using (var context = new SqlDbContext(this.sqlConnectionString))
             {
-                var account = await context.Accounts.Where(a => a.AccountId == account1.AccountId).SingleAsync();
+                var account = await context.Accounts.Where(a => a.AccountId == initialAccount.AccountId).SingleAsync();
                 account.SavingsBalance -= 100.0M;
                 account.CheckingBalance += 100.0M;
                 await context.SaveChangesAsync();
@@ -90,6 +90,7 @@ await Task.Run(() => Parallel.For(0, requests, async i =>
         break;
     } while (true); // In real code, limit the number of attempts to avoid infinite loops, throw if too many
 });
+await Task.WhenAll(tasks);
 ```
 
 ### Optimistic Concurrency Control (for a single entity)
@@ -161,16 +162,17 @@ using (var context = new SqlDbContext(this.sqlConnectionString))
 
 // Run 1000 concurrent requests moving money between accounts
 int requests = 1000;
-await Task.Run(() => Parallel.For(0, requests, async i =>
+var tasks = Enumerable.Range(0, requests).Select(async i =>
 {
     using (var context = new SqlDbContext(this.sqlConnectionString))
     {
-        var account = await context.Accounts.Where(a => a.AccountId == account1.AccountId).SingleAsync();
+        var account = await context.Accounts.Where(a => a.AccountId == initialAccount.AccountId).SingleAsync();
         account.SavingsBalance -= 100.0M;
         account.CheckingBalance += 100.0M;
         await context.SaveChangesAsync();
     }
 });
+await Task.WhenAll(tasks);
 ```
 
 ### Transactional Concurrency Control (= locks, slower however this works also for multiple related entities)
@@ -194,7 +196,7 @@ using (var context = new SqlDbContext(this.sqlConnectionString))
 
 // Run 1000 concurrent requests moving money between accounts
 int requests = 1000;
-await Task.Run(() => Parallel.For(0, requests, async i =>
+var tasks = Enumerable.Range(0, requests).Select(async i =>
 {
     int attempts = 0;
     do
@@ -206,7 +208,7 @@ await Task.Run(() => Parallel.For(0, requests, async i =>
             using (SqlDbContext context = new SqlDbContext(this.sqlConnectionString))
             {
                 AccountForMssql bankAccount = await context.Accounts
-                    .Where(a => a.AccountId == account.AccountId)
+                    .Where(a => a.AccountId == initialAccount.AccountId)
                     .SingleAsync();
                 bankAccount.SavingsBalance -= 100.0M;
                 bankAccount.CheckingBalance += 100.0M;
@@ -221,7 +223,8 @@ await Task.Run(() => Parallel.For(0, requests, async i =>
         break;
     }
     while (true);
-}));
+});
+await Task.WhenAll(tasks);
 ```
 
 ### Testing the result
@@ -232,7 +235,7 @@ AccountForMssql resultingAccount;
 using (SqlDbContext context = new SqlDbContext(this.sqlConnectionString))
 {
     resultingAccount = await context.Accounts
-        .Where(a => a.AccountId == account.AccountId)
+        .Where(a => a.AccountId == initialAccount.AccountId)
         .SingleAsync();
 }
 Assert.AreEqual(initialAccount.SavingsBalance - 100.0M * requests, resultingAccount.SavingsBalance);
