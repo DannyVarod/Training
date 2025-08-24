@@ -4,6 +4,8 @@
 
 This section has covered concurrency control mechanisms across different database types, demonstrating how each database category handles concurrent operations and what best practices developers should follow to ensure data integrity.
 
+**Foundation**: For fundamental concurrency concepts in C# including race conditions, synchronization primitives (mutex, lock, atomic operations), semaphores, and deadlock prevention, see [Concurrency Fundamentals for C# Developers](./concurrency-fundamentals-csharp.md).
+
 ## Design Patterns Demonstrated
 
 ### 1. Template Method Pattern

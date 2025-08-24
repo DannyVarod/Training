@@ -2,6 +2,7 @@
 
 ## Background
 
+- [Concurrency Fundamentals for C# Developers](./concurrency-fundamentals-csharp.md)
 - [NoSQL Fundamentals for SQL Developers](./nosql-fundamentals.md)
 
 ## Topics
