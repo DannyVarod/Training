@@ -881,6 +881,395 @@ public void BuiltInSpinLockComparison()
 
 SpinLocks demonstrate the power of atomic operations but should be used sparingly and only when the performance benefits clearly outweigh the complexity.
 
+## Concurrent Collections in .NET
+
+.NET provides several thread-safe collections that handle concurrency internally, eliminating the need for manual synchronization in many scenarios. These collections use lock-free algorithms and optimistic concurrency techniques under the hood.
+
+### ConcurrentDictionary<TKey, TValue>
+
+A thread-safe dictionary that supports concurrent reads and writes.
+
+```csharp
+[TestMethod]
+public void ConcurrentDictionaryDemo()
+{
+    var concurrentDict = new ConcurrentDictionary<string, int>();
+    int iterations = 1000;
+
+    // Multiple threads adding and updating values concurrently
+    Parallel.For(0, iterations, i =>
+    {
+        var key = $"key_{i % 100}"; // Create some key collisions intentionally
+        
+        // AddOrUpdate is atomic - either adds new key or updates existing
+        concurrentDict.AddOrUpdate(
+            key, 
+            addValue: 1,                    // Value to add if key doesn't exist
+            updateValueFactory: (k, v) => v + 1  // Function to update if key exists
+        );
+    });
+
+    // Verify thread-safe operations worked correctly
+    int totalValue = concurrentDict.Values.Sum();
+    Console.WriteLine($"Total value across all keys: {totalValue}");
+    Assert.AreEqual(iterations, totalValue);
+    
+    // Other useful atomic operations
+    concurrentDict.TryAdd("new_key", 42);
+    concurrentDict.TryRemove("key_1", out int removedValue);
+    concurrentDict.TryGetValue("key_2", out int getValue);
+    
+    Console.WriteLine($"Dictionary contains {concurrentDict.Count} items");
+}
+```
+
+### ConcurrentQueue<T> and ConcurrentStack<T>
+
+Thread-safe FIFO queue and LIFO stack implementations.
+
+```csharp
+[TestMethod]
+public void ConcurrentQueueAndStackDemo()
+{
+    var concurrentQueue = new ConcurrentQueue<int>();
+    var concurrentStack = new ConcurrentStack<int>();
+    int itemCount = 1000;
+
+    // Producer threads adding items
+    var producers = Enumerable.Range(0, 3).Select(producerId => Task.Run(() =>
+    {
+        for (int i = 0; i < itemCount / 3; i++)
+        {
+            int value = producerId * 1000 + i;
+            concurrentQueue.Enqueue(value);
+            concurrentStack.Push(value);
+        }
+    }));
+
+    // Consumer threads removing items
+    int queueItemsProcessed = 0;
+    int stackItemsProcessed = 0;
+    
+    var consumers = Enumerable.Range(0, 2).Select(consumerId => Task.Run(() =>
+    {
+        // Process queue items
+        while (concurrentQueue.TryDequeue(out int queueItem))
+        {
+            Interlocked.Increment(ref queueItemsProcessed);
+            Thread.Sleep(1); // Simulate processing time
+        }
+        
+        // Process stack items  
+        while (concurrentStack.TryPop(out int stackItem))
+        {
+            Interlocked.Increment(ref stackItemsProcessed);
+            Thread.Sleep(1); // Simulate processing time
+        }
+    }));
+
+    // Wait for all producers to finish
+    Task.WaitAll(producers.ToArray());
+    
+    // Give consumers time to process remaining items
+    Thread.Sleep(100);
+    
+    // Process any remaining items
+    while (concurrentQueue.TryDequeue(out int _)) queueItemsProcessed++;
+    while (concurrentStack.TryPop(out int _)) stackItemsProcessed++;
+
+    Console.WriteLine($"Queue items processed: {queueItemsProcessed}");
+    Console.WriteLine($"Stack items processed: {stackItemsProcessed}");
+    Assert.AreEqual(itemCount, queueItemsProcessed);
+    Assert.AreEqual(itemCount, stackItemsProcessed);
+}
+```
+
+### ConcurrentBag<T>
+
+A thread-safe unordered collection optimized for scenarios where the same thread adds and removes items.
+
+```csharp
+[TestMethod]
+public void ConcurrentBagDemo()
+{
+    var bag = new ConcurrentBag<string>();
+    int itemsPerThread = 100;
+    int threadCount = 4;
+
+    // Each thread adds and removes items
+    var tasks = Enumerable.Range(0, threadCount).Select(threadId => Task.Run(() =>
+    {
+        // Add items
+        for (int i = 0; i < itemsPerThread; i++)
+        {
+            bag.Add($"Thread{threadId}_Item{i}");
+        }
+
+        // Remove some items (same thread that added them - optimal for ConcurrentBag)
+        int itemsRemoved = 0;
+        for (int i = 0; i < itemsPerThread / 2; i++)
+        {
+            if (bag.TryTake(out string item))
+            {
+                itemsRemoved++;
+            }
+        }
+        
+        Console.WriteLine($"Thread {threadId}: Added {itemsPerThread}, Removed {itemsRemoved}");
+    }));
+
+    Task.WaitAll(tasks.ToArray());
+    
+    Console.WriteLine($"Final bag count: {bag.Count}");
+    // Should have approximately half the items remaining
+    Assert.IsTrue(bag.Count > 0 && bag.Count <= threadCount * itemsPerThread);
+}
+```
+
+### BlockingCollection<T>
+
+A collection that blocks threads when trying to take from an empty collection or add to a full collection.
+
+```csharp
+[TestMethod]
+public void BlockingCollectionDemo()
+{
+    using (var blockingCollection = new BlockingCollection<int>(boundedCapacity: 10))
+    {
+        int itemsToProduce = 50;
+        int itemsProduced = 0;
+        int itemsConsumed = 0;
+
+        // Producer task
+        var producer = Task.Run(() =>
+        {
+            try
+            {
+                for (int i = 0; i < itemsToProduce; i++)
+                {
+                    blockingCollection.Add(i); // Blocks if collection is full
+                    Interlocked.Increment(ref itemsProduced);
+                    Console.WriteLine($"Produced: {i}");
+                }
+            }
+            finally
+            {
+                blockingCollection.CompleteAdding(); // Signal no more items
+            }
+        });
+
+        // Consumer task
+        var consumer = Task.Run(() =>
+        {
+            try
+            {
+                // GetConsumingEnumerable blocks until items are available
+                foreach (int item in blockingCollection.GetConsumingEnumerable())
+                {
+                    Thread.Sleep(50); // Simulate processing time
+                    Interlocked.Increment(ref itemsConsumed);
+                    Console.WriteLine($"Consumed: {item}");
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                // Collection was marked as complete
+            }
+        });
+
+        Task.WaitAll(producer, consumer);
+        
+        Assert.AreEqual(itemsToProduce, itemsProduced);
+        Assert.AreEqual(itemsToProduce, itemsConsumed);
+        Console.WriteLine($"Produced: {itemsProduced}, Consumed: {itemsConsumed}");
+    }
+}
+```
+
+### Immutable Collections
+
+Immutable collections provide thread safety through immutability - they can be safely shared across threads because they never change.
+
+```csharp
+[TestMethod]
+public void ImmutableCollectionsDemo()
+{
+    // Start with empty immutable list
+    var originalList = ImmutableList<string>.Empty;
+    
+    // "Adding" to immutable collections returns new instances
+    var list1 = originalList.Add("Item1");
+    var list2 = list1.Add("Item2").Add("Item3");
+    
+    Console.WriteLine($"Original: {originalList.Count} items");
+    Console.WriteLine($"List1: {list1.Count} items");
+    Console.WriteLine($"List2: {list2.Count} items");
+    
+    // Concurrent operations on immutable collections
+    var results = new ConcurrentBag<ImmutableList<int>>();
+    
+    Parallel.For(0, 100, i =>
+    {
+        var numbers = ImmutableList<int>.Empty;
+        
+        // Build list for this thread
+        for (int j = 0; j < 10; j++)
+        {
+            numbers = numbers.Add(i * 10 + j);
+        }
+        
+        results.Add(numbers);
+    });
+    
+    // All lists are independent and thread-safe
+    Assert.AreEqual(100, results.Count);
+    Assert.IsTrue(results.All(list => list.Count == 10));
+    
+    Console.WriteLine($"Created {results.Count} independent immutable lists");
+
+    // ImmutableDictionary example
+    var dict = ImmutableDictionary<string, int>.Empty
+        .Add("key1", 1)
+        .Add("key2", 2)
+        .SetItem("key1", 10); // Returns new dictionary with updated value
+        
+    Assert.AreEqual(10, dict["key1"]);
+    Console.WriteLine($"Dictionary has {dict.Count} items");
+}
+```
+
+### Performance Comparison and When to Use Each
+
+```csharp
+[TestMethod]
+public void ConcurrentCollectionPerformanceComparison()
+{
+    const int operations = 100000;
+    
+    // Test ConcurrentDictionary vs Dictionary with locks
+    var concurrentDict = new ConcurrentDictionary<int, int>();
+    var regularDict = new Dictionary<int, int>();
+    var lockObject = new object();
+    
+    // ConcurrentDictionary test
+    var stopwatch = Stopwatch.StartNew();
+    Parallel.For(0, operations, i =>
+    {
+        concurrentDict.TryAdd(i, i * 2);
+    });
+    var concurrentTime = stopwatch.Elapsed;
+    
+    // Dictionary with locks test
+    stopwatch.Restart();
+    Parallel.For(0, operations, i =>
+    {
+        lock (lockObject)
+        {
+            if (!regularDict.ContainsKey(i))
+                regularDict.Add(i, i * 2);
+        }
+    });
+    var lockedTime = stopwatch.Elapsed;
+    
+    Console.WriteLine($"ConcurrentDictionary: {concurrentTime.TotalMilliseconds:F2}ms");
+    Console.WriteLine($"Dictionary with locks: {lockedTime.TotalMilliseconds:F2}ms");
+    
+    Assert.AreEqual(operations, concurrentDict.Count);
+    Assert.AreEqual(operations, regularDict.Count);
+}
+```
+
+### Collection Selection Guide
+
+| Collection | Best For | Key Features | Performance |
+|------------|----------|--------------|-------------|
+| **ConcurrentDictionary** | Key-value lookups, caching | Atomic AddOrUpdate, TryGetValue | Excellent for reads, good for writes |
+| **ConcurrentQueue** | Producer-consumer patterns | FIFO ordering, TryDequeue | High throughput, minimal contention |
+| **ConcurrentStack** | LIFO scenarios, work-stealing | LIFO ordering, TryPop | Very fast push/pop operations |
+| **ConcurrentBag** | Same-thread add/remove | Thread-local optimization | Best when same thread adds/removes |
+| **BlockingCollection** | Producer-consumer with backpressure | Bounded capacity, blocking operations | Good for controlling memory usage |
+| **ImmutableList/Dictionary** | Read-heavy scenarios | Complete thread safety via immutability | Excellent for reads, expensive writes |
+
+### Best Practices for Concurrent Collections
+
+#### 1. Choose the Right Collection
+
+```csharp
+// Good: Use ConcurrentDictionary for frequent lookups
+var cache = new ConcurrentDictionary<string, object>();
+cache.TryGetValue("key", out object value);
+
+// Bad: Using regular Dictionary with locks for simple lookups
+var dict = new Dictionary<string, object>();
+lock (dict) { dict.TryGetValue("key", out object value); }
+```
+
+#### 2. Prefer TryXxx Methods
+
+```csharp
+// Good: Using Try methods that don't throw
+if (concurrentQueue.TryDequeue(out var item))
+{
+    ProcessItem(item);
+}
+
+// Less ideal: Using methods that can throw
+try
+{
+    var item = concurrentQueue.First(); // Could throw if empty
+    ProcessItem(item);
+}
+catch (InvalidOperationException) { }
+```
+
+#### 3. Use AddOrUpdate for Complex Logic
+
+```csharp
+// Good: Atomic update with complex logic
+var result = concurrentDict.AddOrUpdate(
+    key: "counter",
+    addValue: 1,
+    updateValueFactory: (k, currentValue) => currentValue < 100 ? currentValue + 1 : currentValue
+);
+
+// Bad: Check-then-act race condition
+if (concurrentDict.TryGetValue("counter", out int current))
+{
+    if (current < 100)
+        concurrentDict.TryUpdate("counter", current + 1, current); // Might fail if value changed
+}
+```
+
+#### 4. Consider Memory Usage with Immutable Collections
+
+```csharp
+// Good: Use Builder for multiple operations
+var builder = ImmutableList.CreateBuilder<int>();
+for (int i = 0; i < 1000; i++)
+{
+    builder.Add(i);
+}
+var finalList = builder.ToImmutable();
+
+// Less efficient: Multiple allocations
+var list = ImmutableList<int>.Empty;
+for (int i = 0; i < 1000; i++)
+{
+    list = list.Add(i); // Creates new list each time
+}
+```
+
+### Key Takeaways
+
+1. **Concurrent collections eliminate most manual synchronization** - use them instead of locks when possible
+2. **Choose collections based on access patterns** - reads vs writes, ordering requirements, etc.
+3. **TryXxx methods are preferred** - they don't throw exceptions and perform better
+4. **Immutable collections provide ultimate thread safety** but at the cost of memory allocations
+5. **BlockingCollection is great for producer-consumer** scenarios with backpressure control
+6. **Performance varies by scenario** - measure in your specific use case
+
+Concurrent collections represent the highest level of abstraction for thread-safe programming and should be your first choice when dealing with shared data structures.
+
 ## Connection to Database Concurrency
 
 Understanding these fundamental concepts is crucial for database concurrency:
