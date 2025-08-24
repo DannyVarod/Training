@@ -331,7 +331,11 @@ public class DocumentConcurrencyTests
         // In a real scenario, this would connect to a MongoDB instance
         try
         {
-            var client = new MongoClient(TestConnectionString);
+            // Configure MongoDB client with standard UUID representation
+            var settings = MongoClientSettings.FromConnectionString(TestConnectionString);
+            settings.GuidRepresentation = GuidRepresentation.Standard;
+            
+            var client = new MongoClient(settings);
             var database = client.GetDatabase($"{TestDatabaseName}_{DateTime.Now:yyyyMMddHHmmss}");
             return database.GetCollection<T>(collectionName);
         }
