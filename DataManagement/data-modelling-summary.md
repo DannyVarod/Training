@@ -87,6 +87,37 @@ Time window: "app:throttling:api:bucket:2025-01-01-14" → list
 
 **Why**: Key-value stores optimize for simple, fast operations with predictable access patterns.
 
+### Vector Databases: Embeddings and Metadata
+
+**Key Principle**: Combine semantic vectors with structured metadata for hybrid search
+
+**Approach**:
+- Store documents as embeddings (dense vectors) for similarity search
+- Include rich metadata for filtering and organization
+- Choose embedding strategies based on document size and use case
+- Design collections for specific data types or domains
+
+**Example Structure**:
+```python
+{
+  "document": "Text content about AI and machine learning",
+  "embedding": [0.1, -0.3, 0.8, ...],  # 384-dimensional vector
+  "metadata": {
+    "source": "document1.txt",
+    "category": "technology",
+    "created_at": "2025-01-15T10:30:00Z",
+    "tags": ["ai", "ml", "tutorial"]
+  }
+}
+```
+
+**Data Modeling Strategies**:
+- **Document-centric**: Store entire documents as single vectors (good for short docs)
+- **Chunk-based**: Split large documents into semantic chunks using markdown structure
+- **Entity-centric**: Create vectors for specific entities with rich attributes
+
+**Why**: Vector databases excel at semantic similarity search while metadata enables precise filtering and organization.
+
 ## Primary Key Best Practices (Universal)
 
 ### Do NOT Use
@@ -119,6 +150,7 @@ Status: "active", "pending", "suspended"
 | **Document** | Flexible schema | Dynamic typing | Semi-structured, evolving data |
 | **Columnar** | Defined schema | Mixed support | Analytics, large datasets |
 | **Key-Value** | No schema | Value-dependent | Simple key-based access |
+| **Vector** | Flexible metadata | Mixed (vectors + metadata) | Semantic search, AI/ML applications |
 
 ### Cross-Database Compatibility
 
@@ -167,6 +199,7 @@ Example: (10M/hour × 5 × 10ms) + Buffer = ~20 partitions
 | **Document** | Denormalize (embed) | Application-generated GUID | Embedded documents/arrays | Document versioning |
 | **Columnar** | Flat/wide tables | Application-generated GUID | Denormalized JOINs | ALTER table operations |
 | **Key-Value** | Purpose-built keys | Hierarchical key structure | Key naming conventions | Key versioning |
+| **Vector** | Embeddings + metadata | Application-generated GUID | Metadata relationships | Collection versioning |
 
 ### Primary Key Selection Matrix
 
@@ -179,13 +212,15 @@ Example: (10M/hour × 5 × 10ms) + Buffer = ~20 partitions
 
 ### Data Structure Decision Matrix
 
-| Data Characteristics | Relational | Document | Columnar | Key-Value |
-|---------------------|------------|----------|----------|-----------|
-| **Fixed schema, simple relationships** | ✅ Excellent | ❌ Overkill | ❌ Overkill | ❌ Wrong tool |
-| **Nested data, flexible schema** | ❌ Poor fit | ✅ Excellent | ⚠️ Possible | ❌ Limited |
-| **High read volume, simple queries** | ⚠️ Possible | ✅ Good | ✅ Excellent | ✅ Excellent |
-| **Complex analytics, aggregations** | ⚠️ Limited | ❌ Poor | ✅ Excellent | ❌ Wrong tool |
-| **Simple key-value lookups** | ❌ Overkill | ❌ Overkill | ❌ Overkill | ✅ Excellent |
+| Data Characteristics | Relational | Document | Columnar | Key-Value | Vector |
+|---------------------|------------|----------|----------|-----------|--------|
+| **Fixed schema, simple relationships** | ✅ Excellent | ❌ Overkill | ❌ Overkill | ❌ Wrong tool | ❌ Wrong tool |
+| **Nested data, flexible schema** | ❌ Poor fit | ✅ Excellent | ⚠️ Possible | ❌ Limited | ⚠️ Limited |
+| **High read volume, simple queries** | ⚠️ Possible | ✅ Good | ✅ Excellent | ✅ Excellent | ❌ Wrong tool |
+| **Complex analytics, aggregations** | ⚠️ Limited | ❌ Poor | ✅ Excellent | ❌ Wrong tool | ❌ Wrong tool |
+| **Simple key-value lookups** | ❌ Overkill | ❌ Overkill | ❌ Overkill | ✅ Excellent | ❌ Wrong tool |
+| **Semantic similarity search** | ❌ Wrong tool | ❌ Limited | ❌ Wrong tool | ❌ Wrong tool | ✅ Excellent |
+| **AI/ML embeddings and content search** | ❌ Poor fit | ⚠️ Possible | ❌ Wrong tool | ❌ Limited | ✅ Excellent |
 
 ### Choose Normalization (Relational) When:
 - ACID transactions are required
@@ -307,5 +342,5 @@ Additional hidden costs:
 
 **Navigation:**
 
-- Previous: [Data modelling and distributed file storage](./data-modelling-distributed-file-storage.md)
+- Previous: [Data modelling and vector databases](./data-modelling-vector-dbs.md)
 - Next: [Indexing](./indexing.md)

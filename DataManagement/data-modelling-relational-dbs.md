@@ -21,7 +21,7 @@ e307068f-6405-4190-8298-a3f9003f0f8f | John | Smith | 2000-01-01 | 2025-08-01T10
 **students.EmailAddresses**:
 
 email_address | student_id | created_at | updated_at
---- | --- | --- | --- | ---
+--- | --- | --- | ---
 john.smith.372@somecollege.edu | e307068f-6405-4190-8298-a3f9003f0f8f | 2025-08-01T10:00:00.000+02:00 | 2025-08-01T10:00:00.000+02:00
 john.smithy.y2k@gmail.com | e307068f-6405-4190-8298-a3f9003f0f8f | 2025-08-07T19:00:00+03:00 | 2025-08-07T19:00:00+03:00
 
@@ -32,7 +32,7 @@ Despite having access to government ID numbers duration registration, this examp
 **sensitive.StudentsGovernmentIds**:
 
 student_id | country_iso_3166_1_a2 | goverment_id_type | goverment_id | created_at | updated_at
---- | --- | --- | --- | ---
+--- | --- | --- | --- | --- | ---
 e307068f-6405-4190-8298-a3f9003f0f8f | US | social_security | 12345678 |  2025-08-01T10:00:00.000+02:00 |  2025-08-01T10:00:00.000+02:00
 
 This also enables multiple forms of identification per student.
@@ -192,7 +192,7 @@ Instead, use short, length-limited, lower_snake or UPPER_SNAKE strings to identi
 **Countries**:
 
 country_iso_3166_1_a2 | internet_tld | common_name | official_name
---- | --- | ---
+--- | --- | --- | ---
 US | us | United States | the United States of America
 CA | ca | Canada | Canada
 GB | uk | United Kingdom | the United Kingdom of Great Britain and Northern Ireland

@@ -1,7 +1,8 @@
-# DATABASE AND MESSAGING
+# DATABASES AND MESSAGING
 
 ## Background
 
+- [Concurrency Fundamentals for C# Developers](./concurrency-fundamentals-csharp.md)
 - [NoSQL Fundamentals for SQL Developers](./nosql-fundamentals.md)
 
 ## Topics
@@ -15,7 +16,8 @@
     6. [Message Queues](./message-queues.md)
     7. [Message Topics](./message-topics.md)
     8. [Distributed File Storage](./distributed-file-storage.md)
-    9. [Database types summary](./database-types-summary.md)
+    9. [Vector Databases](./vector-dbs.md)
+    10. [Database types summary](./database-types-summary.md)
 2. [Data modelling and database types](./data-modelling-db-types.md)
     1. [Data modelling intro - data types](./data-types.md)
     2. [Data modelling and relational databases](./data-modelling-relational-dbs.md)
@@ -24,7 +26,8 @@
     5. [Data modelling and columnar databases](./data-modelling-columnar-dbs.md)
     6. [Data modelling and messages](./data-modelling-messages.md)
     7. [Data modelling and distributed file storage](./data-modelling-distributed-file-storage.md)
-    8. [Data modelling summary](./data-modelling-summary.md)
+    8. [Data modelling and vector databases](./data-modelling-vector-dbs.md)
+    9. [Data modelling summary](./data-modelling-summary.md)
 3. [Indexing](./indexing.md)
 4. [Concurrency and databases](./concurrency-and-dbs.md)
     1. [Concurrency and relational databases](./concurrency-relational-dbs.md)
@@ -33,3 +36,4 @@
     4. [Concurrency and columnar databases](./concurrency-columnar-dbs.md)
     5. [Concurrency and databases summary](./concurrency-and-dbs-summary.md)
 5. [Testing](./testing.md)
+6. [Code Injection](./code-injection.md)
