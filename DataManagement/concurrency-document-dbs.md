@@ -34,9 +34,7 @@ await collection.InsertOneAsync(initialAccount);
 int requests = 1000;
 var tasks = Enumerable.Range(0, requests).Select(async i =>
 {
-    var account = await collection.AsQueryable()
-        .Where(a => a._id == initialAccount._id)
-        .SingleAsync();
+    var account = await collection.Find(a => a._id == initialAccount._id).FirstOrDefaultAsync();
     account.SavingsBalance -= 100.0M;
     account.CheckingBalance += 100.0M;
     await collection.ReplaceOneAsync<AccountForMongo>(a => a._id == initialAccount._id, account);
@@ -87,9 +85,7 @@ await Task.WhenAll(tasks);
 
 ```csharp
 var requests = 1000;
-var resultingAccount = await collection.AsQueryable()
-    .Where(a => a._id == initialAccount._id)
-    .SingleAsync();
+var resultingAccount = await collection.Find(a => a._id == initialAccount._id).FirstOrDefaultAsync();
 Assert.AreEqual(initialAccount.SavingsBalance - 100.0M * requests, resultingAccount.SavingsBalance);
 Assert.AreEqual(initialAccount.CheckingBalance + 100.0M * requests, resultingAccount.CheckingBalance);
 // This will fail if you did not use a concurrency control mechanism

@@ -10,6 +10,7 @@
 - [Message Queues](./message-queues.md)
 - [Message Topics](./message-topics.md)
 - [Distributed File Storage](./distributed-file-storage.md)
+- [Vector Databases](./vector-dbs.md)
 - [Database types summary](./database-types-summary.md)
 
 ---

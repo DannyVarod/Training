@@ -9,6 +9,7 @@
 - [Data modelling and columnar databases](./data-modelling-columnar-dbs.md)
 - [Data modelling and messages](./data-modelling-messages.md)
 - [Data modelling and distributed file storage](./data-modelling-distributed-file-storage.md)
+- [Data modelling and vector databases](./data-modelling-vector-dbs.md)
 - [Data modelling summary](./data-modelling-summary.md)
 
 ---
