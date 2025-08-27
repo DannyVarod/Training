@@ -26,7 +26,7 @@ For large message sizes or topics with a large size (`retention * message size *
 
 For **message queues** (e.g. RabbitMQ), the order is guaranteed, as long as processing of one message does not fail while a following message has already started processing.
 
-For **message topics** (e.g. Kafka), take into account that each message is published with a (non-unique) key which is used for partitioning. You can grantee ordering of messages by giving them the same key e.g. for garanteeing order of events per account use the account_id as the partitioning key, whereas if you do not care about the order, use a random GUID as the key to improve balance between partitions.
+For **message topics** (e.g. Kafka), take into account that each message is published with a (non-unique) key which is used for partitioning. You can guarantee ordering of messages by giving them the same key e.g. for guaranteeing order of events per account use the account_id as the partitioning key, whereas if you do not care about the order, use a random GUID as the key to improve balance between partitions.
 
 ### Number of partitions
 
