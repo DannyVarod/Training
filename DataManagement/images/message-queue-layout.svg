@@ -1,0 +1,75 @@
+<svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .queue-border { fill: none; stroke: #4a90e2; stroke-width: 3; }
+      .queue-title { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .message { fill: #2d3748; stroke: #4a90e2; stroke-width: 1; }
+      .focused-message { fill: #3d2914; stroke: #e65100; stroke-width: 2; }
+      .message-text { font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #81c784; }
+      .focused-message-text { font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #a5d6a7; }
+      .producer { fill: #1a4d1a; stroke: #81c784; stroke-width: 2; }
+      .consumer { fill: #4d1a1a; stroke: #ff8a65; stroke-width: 2; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .flow-arrow { stroke: #4a90e2; stroke-width: 3; fill: none; marker-end: url(#bluearrowhead); }
+      .component-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #ccc; }
+      .fifo-text { font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #999; }
+    </style>
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+      </marker>
+      <marker id="bluearrowhead" markerWidth="12" markerHeight="9" refX="11" refY="4.5" orient="auto">
+        <polygon points="0 0, 12 4.5, 0 9" fill="#4a90e2" />
+      </marker>
+    </defs>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="900" height="300" class="bg" />
+  
+  <!-- Producer -->
+  <rect x="50" y="150" width="100" height="60" class="producer" />
+  <text x="100" y="175" class="component-text">Producer</text>
+  <text x="100" y="190" class="component-text">Application</text>
+  
+  <!-- Queue -->
+  <rect x="250" y="100" width="400" height="120" class="queue-border" />
+  <text x="450" y="125" class="queue-title">Queue: "orders"</text>
+  
+  <!-- Messages in queue (FIFO order) -->
+  <rect x="270" y="150" width="70" height="50" class="focused-message" />
+  <text x="305" y="170" class="focused-message-text">Order #123</text>
+  <text x="305" y="185" class="focused-message-text">Priority: High</text>
+  <text x="305" y="195" class="focused-message-text">Next to process</text>
+  
+  <rect x="350" y="150" width="70" height="50" class="message" />
+  <text x="385" y="170" class="message-text">Order #124</text>
+  <text x="385" y="185" class="message-text">Priority: Med</text>
+  
+  <rect x="430" y="150" width="70" height="50" class="message" />
+  <text x="465" y="170" class="message-text">Order #125</text>
+  <text x="465" y="185" class="message-text">Priority: Low</text>
+  
+  <rect x="510" y="150" width="70" height="50" class="message" />
+  <text x="545" y="170" class="message-text">Order #126</text>
+  <text x="545" y="185" class="message-text">Priority: High</text>
+  
+  <rect x="590" y="150" width="50" height="50" class="message" />
+  <text x="615" y="170" class="message-text">Order</text>
+  <text x="615" y="180" class="message-text">#127</text>
+  <text x="615" y="190" class="message-text">Med</text>
+  
+  <!-- Consumer -->
+  <rect x="720" y="150" width="120" height="60" class="consumer" />
+  <text x="780" y="175" class="component-text">Consumer</text>
+  <text x="780" y="190" class="component-text">Worker</text>
+  
+  <!-- Flow arrows -->
+  <line x1="150" y1="180" x2="240" y2="180" class="flow-arrow" />
+  <text x="195" y="165" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #4a90e2;">ENQUEUE</text>
+  
+  <line x1="660" y1="180" x2="710" y2="180" class="flow-arrow" />
+  <text x="685" y="165" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #4a90e2;">DEQUEUE</text>
+  
+</svg>

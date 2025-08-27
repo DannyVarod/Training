@@ -20,6 +20,8 @@ Data is stored column-wise, meaning all values for a single column are stored to
 - Fast aggregations (only read needed columns)
 - Efficient filtering and scanning
 
+![Columnar Database Layout](./images/columnar-db-layout.svg)
+
 Example table structure:
 
 ID | Name | Age | Department | Salary

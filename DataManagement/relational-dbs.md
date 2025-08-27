@@ -27,6 +27,8 @@ Tables use keys and indices (indexes) to enable searching quickly within large d
 
 Data is stored row-by-row, so with a row transversal is fast due to data locality.
 
+![Relational Database Layout](./images/relational-db-layout.svg)
+
 The language used to define the structures and to query the database is called SQL (Structured Query Language).
 
 Tables are created with a definition.

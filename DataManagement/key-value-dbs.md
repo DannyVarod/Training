@@ -18,6 +18,8 @@ Searching these database is only by key, they do not have other indices.
 
 Nesting of more levels is usually achieved using the convention ":" character within keys, for example:
 
+![Key-Value Database Layout](./images/key-value-db-layout.svg)
+
 ```Redis
 SET my_app:object_type:object_key "value"
 ```

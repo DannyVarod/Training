@@ -14,6 +14,8 @@ Theoretically, each document stored in a collection could have completely differ
 
 Documents are viewed as JSON and stored as BSON (binary form of JSON).
 
+![Document Database Layout](./images/document-db-layout.svg)
+
 Also unlike in relation databases, you do not need to create a database or collection in advance before storing documents.
 
 ```MongoDB
