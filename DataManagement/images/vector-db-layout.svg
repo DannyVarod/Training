@@ -1,0 +1,69 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .vector-title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .vector-point { fill: #2d3748; stroke: #4a90e2; stroke-width: 2; r: 8; }
+      .focused-vector { fill: #3d2914; stroke: #e65100; stroke-width: 4; r: 12; }
+      .query-vector { fill: #4d1a1a; stroke: #ff8a65; stroke-width: 4; r: 10; }
+      .similar-vector { fill: #1a4d1a; stroke: #81c784; stroke-width: 4; r: 10; }
+      .vector-text { font-family: Arial, sans-serif; font-size: 16px; text-anchor: middle; fill: #81c784; }
+      .focused-vector-text { font-family: Arial, sans-serif; font-size: 16px; text-anchor: middle; fill: #a5d6a7; }
+      .query-text { font-family: Arial, sans-serif; font-size: 16px; text-anchor: middle; fill: #ff8a65; }
+      .similarity-line { stroke: #81c784; stroke-width: 4; stroke-dasharray: 6,6; }
+      .distance-line { stroke: #666; stroke-width: 2; stroke-dasharray: 4,4; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="1000" height="700" class="bg" />
+  
+  <!-- Vector Space (without border) -->
+  <text x="500" y="70" class="vector-title">Vector Space (768-dimensional embeddings projected to 2D)</text>
+  
+  <!-- Vector points in space -->
+  <!-- Cluster 1: Similar documents -->
+  <circle cx="240" cy="220" class="vector-point" />
+  <text x="240" y="200" class="vector-text">Doc1</text>
+  <text x="240" y="250" style="font-family: 'Courier New', monospace; font-size: 12px; text-anchor: middle; fill: #666;">[0.2,0.8,...]</text>
+  
+  <circle cx="280" cy="240" class="similar-vector" />
+  <text x="280" y="220" class="vector-text">Doc2</text>
+  <text x="280" y="270" style="font-family: 'Courier New', monospace; font-size: 12px; text-anchor: middle; fill: #666;">[0.3,0.7,...]</text>
+  
+  <circle cx="260" cy="280" class="similar-vector" />
+  <text x="260" y="310" class="vector-text">Doc3</text>
+  <text x="260" y="330" style="font-family: 'Courier New', monospace; font-size: 12px; text-anchor: middle; fill: #666;">[0.1,0.9,...]</text>
+  
+  <!-- Query vector -->
+  <circle cx="220" cy="260" class="query-vector" />
+  <text x="220" y="240" class="query-text">Query</text>
+  <text x="220" y="290" style="font-family: 'Courier New', monospace; font-size: 12px; text-anchor: middle; fill: #ff8a65;">[0.2,0.8,...]</text>
+  
+  <!-- Cluster 2: Different topic -->
+  <circle cx="600" cy="160" class="vector-point" />
+  <text x="600" y="140" class="vector-text">Doc4</text>
+  <text x="600" y="190" style="font-family: 'Courier New', monospace; font-size: 12px; text-anchor: middle; fill: #666;">[0.9,0.1,...]</text>
+  
+  <circle cx="640" cy="180" class="vector-point" />
+  <text x="640" y="160" class="vector-text">Doc5</text>
+  <text x="640" y="210" style="font-family: 'Courier New', monospace; font-size: 12px; text-anchor: middle; fill: #666;">[0.8,0.2,...]</text>
+  
+  <!-- Cluster 3: Another topic -->
+  <circle cx="700" cy="480" class="vector-point" />
+  <text x="700" y="460" class="vector-text">Doc6</text>
+  <text x="700" y="510" style="font-family: 'Courier New', monospace; font-size: 12px; text-anchor: middle; fill: #666;">[0.1,0.1,...]</text>
+  
+  <circle cx="740" cy="500" class="vector-point" />
+  <text x="740" y="530" class="vector-text">Doc7</text>
+  <text x="740" y="550" style="font-family: 'Courier New', monospace; font-size: 12px; text-anchor: middle; fill: #666;">[0.2,0.0,...]</text>
+  
+  <!-- Similarity lines -->
+  <line x1="220" y1="260" x2="240" y2="220" class="similarity-line" />
+  <line x1="220" y1="260" x2="280" y2="240" class="similarity-line" />
+  <line x1="220" y1="260" x2="260" y2="280" class="similarity-line" />
+  
+  <!-- Distance indicators -->
+  <line x1="220" y1="260" x2="600" y2="160" class="distance-line" />
+  <line x1="220" y1="260" x2="700" y2="480" class="distance-line" />
+</svg>

@@ -4,13 +4,7 @@ Message queues, like RabbitMQ are point-to-point communication systems where mes
 
 Common examples include RabbitMQ, Amazon SQS, Azure Service Bus, Apache ActiveMQ.
 
-```mermaid
-flowchart LR
-    producer["producer"]
-    app["single app"]
-    producer -- message --> queue
-    queue -- message --> app
-```
+![Message Queue Layout](./images/message-queue-layout.svg)
 
 Producers publish their messages to a queue, and consumers retrieve and consume messages from the queue.
 

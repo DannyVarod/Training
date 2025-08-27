@@ -13,6 +13,8 @@ Tables are created with a defined set of tablets.
 
 Per tablet, each key can contain any set of columns, similar to a shallow (one-level) document.
 
+![Wide-Column Database Layout](./images/wide-column-db-layout.svg)
+
 In HBase / BigData, the values in columns are stored as binary, so the client code needs to serialize / deserialize values to / from binary.
 
 Searching is by keys only, however, you can scan data in-order of key values from one key to another.

@@ -16,6 +16,8 @@ Key characteristics:
 - **Consistency models**: Various levels of consistency depending on the system
 - **Access patterns**: Optimized for different use cases (streaming, batch processing, etc.)
 
+![Distributed File Storage Layout](./images/distributed-file-storage-layout.svg)
+
 You can use different file formats for different use cases such as parquet files as a columnar database without updated.
 
 You can also store searchable meta data in one database type, that contains a location of file and data within file stored in a distributed file storage, to enable random access together with large data stored in files.

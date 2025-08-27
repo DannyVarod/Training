@@ -1,0 +1,106 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .column-page { fill: #2d3748; stroke: #4a90e2; stroke-width: 2; }
+      .focused-column { fill: #3d2914; stroke: #e65100; stroke-width: 3; }
+      .fold-triangle { fill: #1a202c; stroke: #4a90e2; stroke-width: 1; }
+      .column-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .cell-text { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; fill: #cbd5e0; }
+      .focused-text { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; fill: #f7fafc; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="500" class="bg" />
+  
+  <!-- ID Column -->
+  <rect x="50" y="82" width="120" height="350" class="column-page" />
+  <!-- Folded corner -->
+  <polygon points="50,82 70,82 50,102" class="fold-triangle" />
+  <line x1="50" y1="102" x2="70" y2="82" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="110" y="67" class="column-title">ID</text>
+  <text x="110" y="122" class="cell-text">3489347</text>
+  <text x="110" y="152" class="cell-text">1347347</text>
+  <text x="110" y="182" class="cell-text">8945784</text>
+  <text x="110" y="212" class="cell-text">2234567</text>
+  <text x="110" y="242" class="cell-text">5678901</text>
+  <text x="110" y="272" class="cell-text">6789012</text>
+  <text x="110" y="302" class="cell-text">7890123</text>
+  <text x="110" y="332" class="cell-text">8901234</text>
+  <text x="110" y="362" class="cell-text">9012345</text>
+  <text x="110" y="392" class="cell-text">...</text>
+  
+  <!-- Name Column -->
+  <rect x="190" y="82" width="120" height="350" class="column-page" />
+  <!-- Folded corner -->
+  <polygon points="190,82 210,82 190,102" class="fold-triangle" />
+  <line x1="190" y1="102" x2="210" y2="82" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="250" y="67" class="column-title">Name</text>
+  <text x="250" y="122" class="cell-text">Alice</text>
+  <text x="250" y="152" class="cell-text">Bob</text>
+  <text x="250" y="182" class="cell-text">Clair</text>
+  <text x="250" y="212" class="cell-text">David</text>
+  <text x="250" y="242" class="cell-text">Emma</text>
+  <text x="250" y="272" class="cell-text">Frank</text>
+  <text x="250" y="302" class="cell-text">Grace</text>
+  <text x="250" y="332" class="cell-text">Henry</text>
+  <text x="250" y="362" class="cell-text">Iris</text>
+  <text x="250" y="392" class="cell-text">...</text>
+  
+  <!-- Age Column (Focused) -->
+  <rect x="330" y="82" width="120" height="350" class="focused-column" />
+  <!-- Folded corner -->
+  <polygon points="330,82 350,82 330,102" fill="#2d1a0f" stroke="#e65100" stroke-width="1" />
+  <line x1="330" y1="102" x2="350" y2="82" stroke="#e65100" stroke-width="1" />
+  
+  <text x="390" y="67" class="column-title" style="fill: #f7fafc;">Age</text>
+  <text x="390" y="122" class="focused-text">20</text>
+  <text x="390" y="152" class="focused-text">21</text>
+  <text x="390" y="182" class="focused-text">19</text>
+  <text x="390" y="212" class="focused-text">22</text>
+  <text x="390" y="242" class="focused-text">23</text>
+  <text x="390" y="272" class="focused-text">20</text>
+  <text x="390" y="302" class="focused-text">24</text>
+  <text x="390" y="332" class="focused-text">21</text>
+  <text x="390" y="362" class="focused-text">25</text>
+  <text x="390" y="392" class="focused-text">...</text>
+  
+  <!-- Studying Column -->
+  <rect x="470" y="82" width="150" height="350" class="column-page" />
+  <!-- Folded corner -->
+  <polygon points="470,82 490,82 470,102" class="fold-triangle" />
+  <line x1="470" y1="102" x2="490" y2="82" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="545" y="67" class="column-title">Studying</text>
+  <text x="545" y="122" class="cell-text">Software Engineering</text>
+  <text x="545" y="152" class="cell-text">Data Science</text>
+  <text x="545" y="182" class="cell-text">null</text>
+  <text x="545" y="212" class="cell-text">Mathematics</text>
+  <text x="545" y="242" class="cell-text">Physics</text>
+  <text x="545" y="272" class="cell-text">Computer Science</text>
+  <text x="545" y="302" class="cell-text">Biology</text>
+  <text x="545" y="332" class="cell-text">Chemistry</text>
+  <text x="545" y="362" class="cell-text">Engineering</text>
+  <text x="545" y="392" class="cell-text">...</text>
+  
+  <!-- Updated Column -->
+  <rect x="640" y="82" width="120" height="350" class="column-page" />
+  <!-- Folded corner -->
+  <polygon points="640,82 660,82 640,102" class="fold-triangle" />
+  <line x1="640" y1="102" x2="660" y2="82" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="700" y="67" class="column-title">Updated</text>
+  <text x="700" y="122" class="cell-text">2025-02-20</text>
+  <text x="700" y="152" class="cell-text">2025-05-10</text>
+  <text x="700" y="182" class="cell-text">2025-08-01</text>
+  <text x="700" y="212" class="cell-text">2025-06-15</text>
+  <text x="700" y="242" class="cell-text">2025-07-03</text>
+  <text x="700" y="272" class="cell-text">2025-04-22</text>
+  <text x="700" y="302" class="cell-text">2025-03-18</text>
+  <text x="700" y="332" class="cell-text">2025-09-05</text>
+  <text x="700" y="362" class="cell-text">2025-01-12</text>
+  <text x="700" y="392" class="cell-text">...</text>
+</svg>

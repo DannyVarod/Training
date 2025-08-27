@@ -1,0 +1,129 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .table-border { fill: none; stroke: #4a90e2; stroke-width: 3; }
+      .tablet-border { fill: none; stroke: #4a90e2; stroke-width: 2; }
+      .tablet-title { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .document-page { fill: #2d3748; stroke: #4a90e2; stroke-width: 1; }
+      .focused-document { fill: #3d2914; stroke: #e65100; stroke-width: 2; }
+      .fold-triangle { fill: #1a202c; stroke: #4a90e2; stroke-width: 1; }
+      .key-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: start; fill: #81c784; }
+      .binary-text { font-family: 'Courier New', monospace; font-size: 9px; text-anchor: start; fill: #ff8a65; }
+      .focused-key-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: start; fill: #a5d6a7; }
+      .focused-binary-text { font-family: 'Courier New', monospace; font-size: 9px; text-anchor: start; fill: #ffab91; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="500" class="bg" />
+  
+  <!-- Table encapsulation -->
+  <rect x="20" y="20" width="760" height="460" class="table-border" />
+  
+  <!-- Tablet 1: Profile -->
+  <rect x="40" y="40" width="230" height="420" class="tablet-border" />
+  <text x="155" y="60" class="tablet-title">Tablet: Profile</text>
+  
+  <!-- Document 1 -->
+  <rect x="50" y="80" width="210" height="80" class="document-page" />
+  <polygon points="50,80 65,80 50,95" class="fold-triangle" />
+  <line x1="50" y1="95" x2="65" y2="80" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="70" y="100" class="key-text">key:</text>
+  <text x="90" y="100" class="binary-text">0x01</text>
+  <text x="70" y="115" class="key-text">email:</text>
+  <text x="100" y="115" class="binary-text">0x616C6963654065</text>
+  <text x="70" y="130" class="key-text">age:</text>
+  <text x="95" y="130" class="binary-text">0x19</text>
+  <text x="70" y="145" class="key-text">active:</text>
+  <text x="110" y="145" class="binary-text">0x01</text>
+  
+  <!-- Document 2 (Focused) -->
+  <rect x="50" y="180" width="210" height="80" class="focused-document" />
+  <polygon points="50,180 65,180 50,195" fill="#2d1a0f" stroke="#e65100" stroke-width="1" />
+  <line x1="50" y1="195" x2="65" y2="180" stroke="#e65100" stroke-width="1" />
+  
+  <text x="70" y="200" class="focused-key-text">key:</text>
+  <text x="90" y="200" class="focused-binary-text">0x02</text>
+  <text x="70" y="215" class="focused-key-text">email:</text>
+  <text x="100" y="215" class="focused-binary-text">0x626F624074</text>
+  <text x="70" y="230" class="focused-key-text">age:</text>
+  <text x="95" y="230" class="focused-binary-text">0x1E</text>
+  <text x="70" y="245" class="focused-key-text">verified:</text>
+  <text x="120" y="245" class="focused-binary-text">0x00</text>
+  
+  <!-- Document 3 -->
+  <rect x="50" y="280" width="210" height="60" class="document-page" />
+  <polygon points="50,280 65,280 50,295" class="fold-triangle" />
+  <line x1="50" y1="295" x2="65" y2="280" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="70" y="300" class="key-text">key:</text>
+  <text x="90" y="300" class="binary-text">0x03</text>
+  <text x="70" y="315" class="key-text">email:</text>
+  <text x="100" y="315" class="binary-text">0x6361726F6C40</text>
+  <text x="70" y="330" class="key-text">active:</text>
+  <text x="110" y="330" class="binary-text">0x01</text>
+  
+  <!-- Tablet 2: Activity -->
+  <rect x="285" y="40" width="230" height="420" class="tablet-border" />
+  <text x="400" y="60" class="tablet-title">Tablet: Activity</text>
+  
+  <!-- Document 1 -->
+  <rect x="295" y="80" width="210" height="80" class="document-page" />
+  <polygon points="295,80 310,80 295,95" class="fold-triangle" />
+  <line x1="295" y1="95" x2="310" y2="80" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="315" y="100" class="key-text">key:</text>
+  <text x="335" y="100" class="binary-text">0x01</text>
+  <text x="315" y="115" class="key-text">timestamp:</text>
+  <text x="370" y="115" class="binary-text">0x649A1C80</text>
+  <text x="315" y="130" class="key-text">action:</text>
+  <text x="350" y="130" class="binary-text">0x766965775F</text>
+  <text x="315" y="145" class="key-text">duration:</text>
+  <text x="365" y="145" class="binary-text">0x78563412</text>
+  
+  <!-- Document 2 (Focused) -->
+  <rect x="295" y="180" width="210" height="80" class="focused-document" />
+  <polygon points="295,180 310,180 295,195" fill="#2d1a0f" stroke="#e65100" stroke-width="1" />
+  <line x1="295" y1="195" x2="310" y2="180" stroke="#e65100" stroke-width="1" />
+  
+  <text x="315" y="200" class="focused-key-text">key:</text>
+  <text x="335" y="200" class="focused-binary-text">0x02</text>
+  <text x="315" y="215" class="key-text">timestamp:</text>
+  <text x="370" y="215" class="binary-text">0x649A1D00</text>
+  <text x="315" y="230" class="key-text">element:</text>
+  <text x="355" y="230" class="binary-text">0x627574746F</text>
+  <text x="315" y="245" class="key-text">count:</text>
+  <text x="350" y="245" class="binary-text">0x05</text>
+  
+  <!-- Tablet 3: Preferences -->
+  <rect x="530" y="40" width="230" height="420" class="tablet-border" />
+  <text x="645" y="60" class="tablet-title">Tablet: Preferences</text>
+  
+  <!-- Document 1 -->
+  <rect x="540" y="80" width="210" height="80" class="document-page" />
+  <polygon points="540,80 555,80 540,95" class="fold-triangle" />
+  <line x1="540" y1="95" x2="555" y2="80" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="560" y="100" class="key-text">key:</text>
+  <text x="580" y="100" class="binary-text">0x01</text>
+  <text x="560" y="115" class="key-text">language:</text>
+  <text x="610" y="115" class="binary-text">0x656E5F5553</text>
+  <text x="560" y="130" class="key-text">notifications:</text>
+  <text x="630" y="130" class="binary-text">0x01</text>
+  <text x="560" y="145" class="key-text">timezone:</text>
+  <text x="605" y="145" class="binary-text">0x5554432D35</text>
+  
+  <!-- Document 2 -->
+  <rect x="540" y="280" width="210" height="60" class="document-page" />
+  <polygon points="540,280 555,280 540,295" class="fold-triangle" />
+  <line x1="540" y1="295" x2="555" y2="280" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="560" y="300" class="key-text">key:</text>
+  <text x="580" y="300" class="binary-text">0x03</text>
+  <text x="560" y="315" class="key-text">language:</text>
+  <text x="610" y="315" class="binary-text">0x64655F4445</text>
+  <text x="560" y="330" class="key-text">fontSize:</text>
+  <text x="605" y="330" class="binary-text">0x0E</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .key-container { fill: #2d3748; stroke: #4a90e2; stroke-width: 2; }
+      .key-text { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: middle; fill: #81c784; }
+      .value-container { fill: #3d2914; stroke: #e65100; stroke-width: 2; }
+      .list-container { fill: #2d4a3d; stroke: #66bb6a; stroke-width: 2; }
+      .hash-container { fill: #4a2d3d; stroke: #ab47bc; stroke-width: 2; }
+      .value-text { font-family: 'Courier New', monospace; font-size: 10px; text-anchor: start; fill: #ff8a65; }
+      .list-text { font-family: 'Courier New', monospace; font-size: 10px; text-anchor: start; fill: #81c784; }
+      .hash-text { font-family: 'Courier New', monospace; font-size: 9px; text-anchor: start; fill: #ce93d8; }
+      .type-label { font-family: Arial, sans-serif; font-size: 9px; font-weight: bold; text-anchor: middle; fill: #999; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+    </style>
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+      </marker>
+    </defs>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="600" height="500" class="bg" />
+  
+  <!-- Keys Array Label -->
+  <text x="120" y="65" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #4a90e2;">Keys</text>
+  
+  <!-- Values Label -->
+  <text x="450" y="65" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e65100;">Values</text>
+  
+  <!-- Key 1: String/Value-only -->
+  <rect x="50" y="80" width="140" height="30" class="key-container" />
+  <text x="120" y="100" class="key-text">user:1234</text>
+  
+  <rect x="350" y="80" width="200" height="30" class="value-container" />
+  <text x="360" y="100" class="value-text">John Doe</text>
+  
+  <line x1="190" y1="95" x2="350" y2="95" class="arrow" />
+  
+  <!-- Key 2: List -->
+  <rect x="50" y="130" width="140" height="30" class="key-container" />
+  <text x="120" y="150" class="key-text">cart:5678</text>
+  
+  <rect x="350" y="130" width="200" height="80" class="list-container" />
+  <text x="360" y="150" class="list-text">[</text>
+  <text x="375" y="150" class="list-text">"laptop",</text>
+  <text x="375" y="165" class="list-text">"mouse", </text>
+  <text x="375" y="180" class="list-text">"keyboard"</text>
+  <text x="360" y="195" class="list-text">]</text>
+  
+  <line x1="190" y1="145" x2="350" y2="170" class="arrow" />
+  
+  <!-- Key 3: Hash-set -->
+  <rect x="50" y="230" width="140" height="30" class="key-container" />
+  <text x="120" y="250" class="key-text">product:9999</text>
+  
+  <rect x="350" y="230" width="200" height="100" class="hash-container" />
+  <text x="360" y="250" class="hash-text">{</text>
+  <text x="375" y="250" class="hash-text">"name": "Laptop Pro",</text>
+  <text x="375" y="265" class="hash-text">"price": 1299,</text>
+  <text x="375" y="280" class="hash-text">"category": "electronics",</text>
+  <text x="375" y="295" class="hash-text">"stock": 15</text>
+  <text x="360" y="315" class="hash-text">}</text>
+  
+  <line x1="190" y1="245" x2="350" y2="280" class="arrow" />
+  
+  <!-- Key 4: Another String -->
+  <rect x="50" y="350" width="140" height="30" class="key-container" />
+  <text x="120" y="370" class="key-text">session:abc123</text>
+  
+  <rect x="350" y="350" width="200" height="50" class="value-container" />
+  <text x="360" y="370" class="value-text">{"userId": 1234,</text>
+  <text x="360" y="385" class="value-text"> "expires": 1699123456}</text>
+  
+  <line x1="190" y1="365" x2="350" y2="375" class="arrow" />
+  
+  <!-- Key 5: List of numbers -->
+  <rect x="50" y="420" width="140" height="30" class="key-container" />
+  <text x="120" y="440" class="key-text">scores:game1</text>
+  
+  <rect x="350" y="420" width="200" height="50" class="list-container" />
+  <text x="360" y="440" class="list-text">[100, 85, 92, 78, 95]</text>
+  
+  <line x1="190" y1="435" x2="350" y2="445" class="arrow" />
+  
+</svg>

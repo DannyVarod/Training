@@ -1,0 +1,112 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .document-page { fill: #2d3748; stroke: #4a90e2; stroke-width: 2; }
+      .focused-document { fill: #3d2914; stroke: #e65100; stroke-width: 3; }
+      .fold-triangle { fill: #1a202c; stroke: #4a90e2; stroke-width: 1; }
+      .key-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: start; fill: #81c784; }
+      .value-text { font-family: Arial, sans-serif; font-size: 12px; text-anchor: start; fill: #cbd5e0; }
+      .focused-key-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: start; fill: #a5d6a7; }
+      .focused-value-text { font-family: Arial, sans-serif; font-size: 12px; text-anchor: start; fill: #f7fafc; }
+      .subdoc-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: start; fill: #90caf9; }
+      .array-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: start; fill: #ce93d8; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="500" class="bg" />
+  
+  <!-- Document 1 -->
+  <rect x="50" y="50" width="680" height="100" class="document-page" />
+  <!-- Folded corner -->
+  <polygon points="50,50 70,50 50,70" class="fold-triangle" />
+  <line x1="50" y1="70" x2="70" y2="50" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="80" y="75" class="key-text">_id:</text>
+  <text x="115" y="75" class="value-text">"user123"</text>
+  
+  <text x="200" y="75" class="key-text">name:</text>
+  <text x="245" y="75" class="value-text">"Alice"</text>
+  
+  <text x="320" y="75" class="key-text">age:</text>
+  <text x="350" y="75" class="value-text">25</text>
+  
+  <text x="400" y="75" class="key-text">profile:</text>
+  <text x="460" y="75" class="subdoc-text">{</text>
+  <text x="480" y="90" class="subdoc-text">city: "NYC",</text>
+  <text x="480" y="105" class="subdoc-text">country: "USA"</text>
+  <text x="460" y="120" class="subdoc-text">}</text>
+  
+  <text x="600" y="75" class="key-text">active:</text>
+  <text x="650" y="75" class="value-text">true</text>
+  
+  <!-- Document 2 (Focused) -->
+  <rect x="50" y="170" width="680" height="100" class="focused-document" />
+  <!-- Folded corner -->
+  <polygon points="50,170 70,170 50,190" fill="#2d1a0f" stroke="#e65100" stroke-width="1" />
+  <line x1="50" y1="190" x2="70" y2="170" stroke="#e65100" stroke-width="1" />
+  
+  <text x="80" y="195" class="focused-key-text">_id:</text>
+  <text x="115" y="195" class="focused-value-text">"user456"</text>
+  
+  <text x="200" y="195" class="focused-key-text">name:</text>
+  <text x="245" y="195" class="focused-value-text">"Bob"</text>
+  
+  <text x="320" y="195" class="focused-key-text">age:</text>
+  <text x="350" y="195" class="focused-value-text">30</text>
+  
+  <text x="400" y="195" class="focused-key-text">skills:</text>
+  <text x="450" y="195" class="array-text">[</text>
+  <text x="470" y="210" class="array-text">"JavaScript",</text>
+  <text x="470" y="225" class="array-text">"Python",</text>
+  <text x="470" y="240" class="array-text">"SQL"</text>
+  <text x="450" y="255" class="array-text">]</text>
+  
+  <text x="580" y="195" class="focused-key-text">team:</text>
+  <text x="620" y="195" class="focused-value-text">"Backend"</text>
+  
+  <!-- Document 3 -->
+  <rect x="50" y="290" width="680" height="100" class="document-page" />
+  <!-- Folded corner -->
+  <polygon points="50,290 70,290 50,310" class="fold-triangle" />
+  <line x1="50" y1="310" x2="70" y2="290" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="80" y="315" class="key-text">_id:</text>
+  <text x="115" y="315" class="value-text">"user789"</text>
+  
+  <text x="200" y="315" class="key-text">name:</text>
+  <text x="245" y="315" class="value-text">"Carol"</text>
+  
+  <text x="320" y="315" class="key-text">department:</text>
+  <text x="410" y="315" class="value-text">"Engineering"</text>
+  
+  <text x="520" y="315" class="key-text">projects:</text>
+  <text x="580" y="315" class="array-text">[</text>
+  <text x="600" y="330" class="array-text">{</text>
+  <text x="620" y="345" class="array-text">name: "WebApp",</text>
+  <text x="620" y="360" class="array-text">role: "Lead"</text>
+  <text x="600" y="375" class="array-text">}</text>
+  <text x="580" y="385" class="array-text">]</text>
+  
+  <!-- Document 4 -->
+  <rect x="50" y="410" width="680" height="70" class="document-page" />
+  <!-- Folded corner -->
+  <polygon points="50,410 70,410 50,430" class="fold-triangle" />
+  <line x1="50" y1="430" x2="70" y2="410" stroke="#4a90e2" stroke-width="1" />
+  
+  <text x="80" y="435" class="key-text">_id:</text>
+  <text x="115" y="435" class="value-text">"user999"</text>
+  
+  <text x="200" y="435" class="key-text">name:</text>
+  <text x="245" y="435" class="value-text">"David"</text>
+  
+  <text x="320" y="435" class="key-text">email:</text>
+  <text x="365" y="435" class="value-text">"david@example.com"</text>
+  
+  <text x="520" y="435" class="key-text">verified:</text>
+  <text x="585" y="435" class="value-text">false</text>
+  
+  <text x="80" y="455" class="key-text">lastLogin:</text>
+  <text x="155" y="455" class="value-text">"2025-01-15T10:30:00Z"</text>
+</svg>

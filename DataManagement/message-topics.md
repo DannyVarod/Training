@@ -4,15 +4,7 @@ Message topics, like Kafka are publish-subscribe messaging systems where message
 
 Common examples include Kafka, AWS MSK (Managed Streaming for Apache Kafka), Azure Event Hubs, Google Cloud Pub/Sub.
 
-```mermaid
-flowchart LR
-    producer["producer"]
-    first["first consuming app"]
-    second["second consuming app"]
-    producer -- message --> topic
-    topic -- message --> first
-    topic -- message --> second
-```
+![Message Topic Layout](./images/message-topic-layout.svg)
 
 Producers publish their messages to a topic, which keeps all message storage for a given duration (retention set per topic in days).
 

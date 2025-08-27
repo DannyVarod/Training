@@ -1,0 +1,207 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .cluster-border { fill: none; stroke: #4a90e2; stroke-width: 3; }
+      .node-border { fill: none; stroke: #4a90e2; stroke-width: 2; }
+      .cluster-title { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .node-title { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .file-block { fill: #2d3748; stroke: #4a90e2; stroke-width: 1; }
+      .focused-block { fill: #3d2914; stroke: #e65100; stroke-width: 2; }
+      .replica-block { fill: #1a4d1a; stroke: #81c784; stroke-width: 1; }
+      .file-text { font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #81c784; }
+      .focused-file-text { font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #a5d6a7; }
+      .replica-text { font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #a5d6a7; }
+      .client { fill: #4d1a1a; stroke: #ff8a65; stroke-width: 2; }
+      .namenode { fill: #1a1a4d; stroke: #8a8aff; stroke-width: 2; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .replication-arrow { stroke: #81c784; stroke-width: 2; fill: none; marker-end: url(#greenarrowhead); stroke-dasharray: 5,5; }
+      .component-text { font-family: Arial, sans-serif; font-size: 9px; font-weight: bold; text-anchor: middle; fill: #ccc; }
+    </style>
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+      </marker>
+      <marker id="greenarrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#81c784" />
+      </marker>
+    </defs>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="500" class="bg" />
+  
+  <!-- Client -->
+  <rect x="50" y="150" width="80" height="50" class="client" />
+  <text x="90" y="170" class="component-text">Client</text>
+  <text x="90" y="185" class="component-text">Application</text>
+  
+  <!-- NameNode -->
+  <rect x="200" y="50" width="100" height="60" class="namenode" />
+  <text x="250" y="75" class="component-text">NameNode</text>
+  <text x="250" y="90" class="component-text">(Metadata)</text>
+  <text x="250" y="100" style="font-family: Arial, sans-serif; font-size: 7px; text-anchor: middle; fill: #ccc;">File → Blocks</text>
+  
+  <!-- HDFS Cluster -->
+  <rect x="180" y="140" width="570" height="280" class="cluster-border" />
+  <text x="465" y="165" class="cluster-title">HDFS Cluster - DataNodes</text>
+  
+  <!-- DataNode 1 -->
+  <rect x="200" y="180" width="120" height="180" class="node-border" />
+  <text x="260" y="200" class="node-title">DataNode 1</text>
+  
+  <rect x="210" y="210" width="40" height="30" class="focused-block" />
+  <text x="230" y="220" class="focused-file-text">Block</text>
+  <text x="230" y="230" class="focused-file-text">1A</text>
+  <text x="230" y="240" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #ff8a65;">64MB</text>
+  
+  <rect x="260" y="210" width="40" height="30" class="file-block" />
+  <text x="280" y="220" class="file-text">Block</text>
+  <text x="280" y="230" class="file-text">2A</text>
+  <text x="280" y="240" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #666;">64MB</text>
+  
+  <rect x="210" y="250" width="40" height="30" class="replica-block" />
+  <text x="230" y="260" class="replica-text">Block</text>
+  <text x="230" y="270" class="replica-text">3B</text>
+  <text x="230" y="280" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="260" y="250" width="40" height="30" class="file-block" />
+  <text x="280" y="260" class="file-text">Block</text>
+  <text x="280" y="270" class="file-text">4A</text>
+  <text x="280" y="280" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #666;">64MB</text>
+  
+  <rect x="210" y="290" width="40" height="30" class="replica-block" />
+  <text x="230" y="300" class="replica-text">Block</text>
+  <text x="230" y="310" class="replica-text">5C</text>
+  <text x="230" y="320" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="260" y="290" width="40" height="30" class="file-block" />
+  <text x="280" y="300" class="file-text">Block</text>
+  <text x="280" y="310" class="file-text">6A</text>
+  <text x="280" y="320" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #666;">32MB</text>
+  
+  <!-- DataNode 2 -->
+  <rect x="340" y="180" width="120" height="180" class="node-border" />
+  <text x="400" y="200" class="node-title">DataNode 2</text>
+  
+  <rect x="350" y="210" width="40" height="30" class="replica-block" />
+  <text x="370" y="220" class="replica-text">Block</text>
+  <text x="370" y="230" class="replica-text">1B</text>
+  <text x="370" y="240" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="400" y="210" width="40" height="30" class="file-block" />
+  <text x="420" y="220" class="file-text">Block</text>
+  <text x="420" y="230" class="file-text">3A</text>
+  <text x="420" y="240" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #666;">64MB</text>
+  
+  <rect x="350" y="250" width="40" height="30" class="file-block" />
+  <text x="370" y="260" class="file-text">Block</text>
+  <text x="370" y="270" class="file-text">5A</text>
+  <text x="370" y="280" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #666;">64MB</text>
+  
+  <rect x="400" y="250" width="40" height="30" class="replica-block" />
+  <text x="420" y="260" class="replica-text">Block</text>
+  <text x="420" y="270" class="replica-text">2B</text>
+  <text x="420" y="280" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="350" y="290" width="40" height="30" class="replica-block" />
+  <text x="370" y="300" class="replica-text">Block</text>
+  <text x="370" y="310" class="replica-text">4B</text>
+  <text x="370" y="320" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="400" y="290" width="40" height="30" class="replica-block" />
+  <text x="420" y="300" class="replica-text">Block</text>
+  <text x="420" y="310" class="replica-text">6B</text>
+  <text x="420" y="320" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <!-- DataNode 3 -->
+  <rect x="480" y="180" width="120" height="180" class="node-border" />
+  <text x="540" y="200" class="node-title">DataNode 3</text>
+  
+  <rect x="490" y="210" width="40" height="30" class="replica-block" />
+  <text x="510" y="220" class="replica-text">Block</text>
+  <text x="510" y="230" class="replica-text">1C</text>
+  <text x="510" y="240" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="540" y="210" width="40" height="30" class="replica-block" />
+  <text x="560" y="220" class="replica-text">Block</text>
+  <text x="560" y="230" class="replica-text">2C</text>
+  <text x="560" y="240" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="490" y="250" width="40" height="30" class="file-block" />
+  <text x="510" y="260" class="file-text">Block</text>
+  <text x="510" y="270" class="file-text">3B</text>
+  <text x="510" y="280" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #666;">64MB</text>
+  
+  <rect x="540" y="250" width="40" height="30" class="replica-block" />
+  <text x="560" y="260" class="replica-text">Block</text>
+  <text x="560" y="270" class="replica-text">4C</text>
+  <text x="560" y="280" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="490" y="290" width="40" height="30" class="replica-block" />
+  <text x="510" y="300" class="replica-text">Block</text>
+  <text x="510" y="310" class="replica-text">5B</text>
+  <text x="510" y="320" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="540" y="290" width="40" height="30" class="replica-block" />
+  <text x="560" y="300" class="replica-text">Block</text>
+  <text x="560" y="310" class="replica-text">6C</text>
+  <text x="560" y="320" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <!-- DataNode 4 -->
+  <rect x="620" y="180" width="120" height="180" class="node-border" />
+  <text x="680" y="200" class="node-title">DataNode 4</text>
+  
+  <rect x="630" y="210" width="40" height="30" class="file-block" />
+  <text x="650" y="220" class="file-text">Block</text>
+  <text x="650" y="230" class="file-text">7A</text>
+  <text x="650" y="240" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #666;">64MB</text>
+  
+  <rect x="680" y="210" width="40" height="30" class="file-block" />
+  <text x="700" y="220" class="file-text">Block</text>
+  <text x="700" y="230" class="file-text">8A</text>
+  <text x="700" y="240" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #666;">64MB</text>
+  
+  <rect x="630" y="250" width="40" height="30" class="replica-block" />
+  <text x="650" y="260" class="replica-text">Block</text>
+  <text x="650" y="270" class="replica-text">7B</text>
+  <text x="650" y="280" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <rect x="680" y="250" width="40" height="30" class="replica-block" />
+  <text x="700" y="260" class="replica-text">Block</text>
+  <text x="700" y="270" class="replica-text">8B</text>
+  <text x="700" y="280" style="font-family: Arial, sans-serif; font-size: 6px; text-anchor: middle; fill: #999;">replica</text>
+  
+  <!-- Flow arrows -->
+  <line x1="130" y1="175" x2="190" y2="175" class="arrow" />
+  <text x="160" y="165" style="font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #666;">1. Metadata Request</text>
+  
+  <line x1="250" y1="120" x2="250" y2="140" class="arrow" />
+  <text x="320" y="135" style="font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #666;">2. Block Locations</text>
+  
+  <line x1="130" y1="190" x2="200" y2="225" class="arrow" />
+  <text x="160" y="210" style="font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #666;">3. Read Block</text>
+  
+  <!-- Replication arrows -->
+  <line x1="250" y1="225" x2="340" y2="225" class="replication-arrow" />
+  <line x1="250" y1="265" x2="480" y2="265" class="replication-arrow" />
+  
+  <!-- File Structure Info -->
+  <rect x="50" y="250" width="120" height="180" style="fill: #1a202c; stroke: #4a90e2; stroke-width: 2;" />
+  <text x="110" y="270" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: middle; fill: #4a90e2;">File Structure</text>
+  
+  <text x="60" y="290" style="font-family: Arial, sans-serif; font-size: 9px; fill: #81c784;">File: video.mp4</text>
+  <text x="60" y="305" style="font-family: 'Courier New', monospace; font-size: 8px; fill: #ccc;">Size: 320MB</text>
+  
+  <text x="60" y="325" style="font-family: Arial, sans-serif; font-size: 8px; fill: #ff8a65;">Block Layout:</text>
+  <text x="60" y="340" style="font-family: 'Courier New', monospace; font-size: 7px; fill: #ccc;">Block 1A: 0-64MB</text>
+  <text x="60" y="355" style="font-family: 'Courier New', monospace; font-size: 7px; fill: #ccc;">Block 2A: 64-128MB</text>
+  <text x="60" y="370" style="font-family: 'Courier New', monospace; font-size: 7px; fill: #ccc;">Block 3A: 128-192MB</text>
+  <text x="60" y="385" style="font-family: 'Courier New', monospace; font-size: 7px; fill: #ccc;">Block 4A: 192-256MB</text>
+  <text x="60" y="400" style="font-family: 'Courier New', monospace; font-size: 7px; fill: #ccc;">Block 5A: 256-320MB</text>
+  <text x="60" y="415" style="font-family: 'Courier New', monospace; font-size: 7px; fill: #ccc;">Block 6A: 320MB (32MB)</text>
+  
+  <!-- Replication Factor -->
+  <text x="465" y="445" style="font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #81c784;">Replication Factor: 3</text>
+  <text x="465" y="460" style="font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #999;">Each block stored on 3 different nodes</text>
+</svg>
