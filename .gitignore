@@ -364,4 +364,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 COURSE_ASSESSMENT.md
-LECTURE_NOTES.md
+LECTURE_NOTES*.md
