@@ -1,0 +1,45 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .broker-box { fill: #2d3748; stroke: #4a90e2; stroke-width: 3; }
+      .queue-box { fill: #3d4852; stroke: #4a90e2; stroke-width: 2; }
+      .queue-active { fill: #2d3748; stroke: #81c784; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .broker-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .queue-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #cbd5e0; }
+      .active-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #81c784; }
+      .connection-line { stroke: #4a90e2; stroke-width: 2; fill: none; }
+      .dashed-line { stroke: #666; stroke-width: 1; fill: none; stroke-dasharray: 5,5; }
+      .note-text { font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #999; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="300" class="bg" />
+  
+  <!-- Title -->
+  <text x="400" y="25" class="title-text">Message Queue Structure</text>
+  
+  <!-- Broker/Instance Level -->
+  <rect x="50" y="50" width="700" height="220" class="broker-box" />
+  <text x="400" y="75" class="broker-text">Message Broker Instance</text>
+  
+  <!-- Queue Level -->
+  <rect x="150" y="120" width="120" height="80" class="queue-box" />
+  <text x="210" y="145" class="queue-text">Queue:</text>
+  <text x="210" y="165" class="queue-text">"order-processing"</text>
+  
+  <rect x="340" y="120" width="120" height="80" class="queue-active" />
+  <text x="400" y="145" class="active-text">Queue:</text>
+  <text x="400" y="165" class="active-text">"payment-alerts"</text>
+  
+  <rect x="530" y="120" width="120" height="80" class="queue-box" />
+  <text x="590" y="145" class="queue-text">Queue:</text>
+  <text x="590" y="165" class="queue-text">"notifications"</text>
+  
+  <!-- Connection lines -->
+  <line x1="400" y1="85" x2="210" y2="120" class="connection-line" />
+  <line x1="400" y1="85" x2="400" y2="120" class="connection-line" />
+  <line x1="400" y1="85" x2="590" y2="120" class="connection-line" />
+</svg>

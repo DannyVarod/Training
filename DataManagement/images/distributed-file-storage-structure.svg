@@ -1,0 +1,84 @@
+<svg width="1100" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .cluster-box { fill: #2d3748; stroke: #4a90e2; stroke-width: 3; }
+      .namenode-box { fill: #1a1a4d; stroke: #8a8aff; stroke-width: 2; }
+      .standby-box { fill: #2d1a4d; stroke: #8a8aff; stroke-width: 2; stroke-dasharray: 5,5; }
+      .datanode-box { fill: #3d4852; stroke: #4a90e2; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .cluster-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .namenode-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #8a8aff; }
+      .standby-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #9c8aff; }
+      .datanode-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #cbd5e0; }
+      .connection-line { stroke: #4a90e2; stroke-width: 2; fill: none; }
+      .management-line { stroke: #8a8aff; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="1100" height="400" class="bg" />
+  
+  <!-- Title -->
+  <text x="550" y="25" class="title-text">Distributed File Storage Structure</text>
+  
+  <!-- Cluster Level -->
+  <rect x="50" y="50" width="1000" height="320" class="cluster-box" />
+  <text x="550" y="75" class="cluster-text">Distributed File System Cluster</text>
+  
+  <!-- Metadata Management Level - Same row (centered) -->
+  <!-- Active NameNode (left-most with detail) -->
+  <rect x="400" y="120" width="120" height="80" class="namenode-box" />
+  <text x="460" y="140" class="namenode-text">NameNode</text>
+  <text x="460" y="155" class="namenode-text">(Active)</text>
+  <text x="460" y="170" class="namenode-text">Metadata Mgr</text>
+  
+  <!-- Standby NameNode for HA -->
+  <rect x="580" y="120" width="120" height="80" class="standby-box" />
+  <text x="640" y="140" class="standby-text">NameNode</text>
+  <text x="640" y="155" class="standby-text">(Standby)</text>
+  <text x="640" y="170" class="standby-text">HA Backup</text>
+  
+  <!-- Data Storage Level - All DataNodes in same row -->
+  <rect x="100" y="240" width="80" height="100" class="datanode-box" />
+  <text x="140" y="285" class="datanode-text">DataNode 1</text>
+  
+  <rect x="200" y="240" width="80" height="100" class="datanode-box" />
+  <text x="240" y="285" class="datanode-text">DataNode 2</text>
+  
+  <rect x="300" y="240" width="80" height="100" class="datanode-box" />
+  <text x="340" y="285" class="datanode-text">DataNode 3</text>
+  
+  <rect x="400" y="240" width="80" height="100" class="datanode-box" />
+  <text x="440" y="285" class="datanode-text">DataNode 4</text>
+  
+  <rect x="500" y="240" width="80" height="100" class="datanode-box" />
+  <text x="540" y="285" class="datanode-text">DataNode 5</text>
+  
+  <rect x="600" y="240" width="80" height="100" class="datanode-box" />
+  <text x="640" y="285" class="datanode-text">DataNode 6</text>
+  
+  <rect x="700" y="240" width="80" height="100" class="datanode-box" />
+  <text x="740" y="285" class="datanode-text">DataNode 7</text>
+  
+  <rect x="800" y="240" width="80" height="100" class="datanode-box" />
+  <text x="840" y="285" class="datanode-text">DataNode 8</text>
+  
+  <rect x="900" y="240" width="80" height="100" class="datanode-box" />
+  <text x="940" y="285" class="datanode-text">DataNode 9</text>
+  
+  <!-- Connection lines from cluster to metadata layer -->
+  <line x1="550" y1="85" x2="460" y2="120" class="connection-line" />
+  <line x1="550" y1="85" x2="640" y2="120" class="connection-line" />
+  
+  <!-- Management lines from NameNodes to DataNodes -->
+  <line x1="460" y1="200" x2="140" y2="240" class="management-line" />
+  <line x1="460" y1="200" x2="240" y2="240" class="management-line" />
+  <line x1="460" y1="200" x2="340" y2="240" class="management-line" />
+  <line x1="460" y1="200" x2="440" y2="240" class="management-line" />
+  <line x1="460" y1="200" x2="540" y2="240" class="management-line" />
+  <line x1="460" y1="200" x2="640" y2="240" class="management-line" />
+  <line x1="460" y1="200" x2="740" y2="240" class="management-line" />
+  <line x1="460" y1="200" x2="840" y2="240" class="management-line" />
+  <line x1="460" y1="200" x2="940" y2="240" class="management-line" />
+</svg>

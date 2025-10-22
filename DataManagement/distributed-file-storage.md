@@ -1,5 +1,7 @@
 # Distributed File Storage
 
+![Distributed File Storage Structure](./images/distributed-file-storage-structure.svg)
+
 Distributed file storage systems store files across multiple machines or nodes in a network, providing scalability, redundancy, and fault tolerance. These systems are designed to handle large amounts of data and provide high availability by distributing data across multiple locations.
 
 Common examples include:

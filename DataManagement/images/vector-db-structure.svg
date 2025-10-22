@@ -1,0 +1,45 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .instance-box { fill: #2d3748; stroke: #4a90e2; stroke-width: 3; }
+      .collection-box { fill: #3d4852; stroke: #4a90e2; stroke-width: 2; }
+      .collection-active { fill: #2d3748; stroke: #81c784; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .instance-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .collection-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #cbd5e0; }
+      .active-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #81c784; }
+      .connection-line { stroke: #4a90e2; stroke-width: 2; fill: none; }
+      .dashed-line { stroke: #666; stroke-width: 1; fill: none; stroke-dasharray: 5,5; }
+      .note-text { font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #999; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="300" class="bg" />
+  
+  <!-- Title -->
+  <text x="400" y="25" class="title-text">Vector Database Structure</text>
+  
+  <!-- Instance Level -->
+  <rect x="50" y="50" width="700" height="220" class="instance-box" />
+  <text x="400" y="75" class="instance-text">Vector Database Instance</text>
+  
+  <!-- Collection Level -->
+  <rect x="150" y="120" width="120" height="80" class="collection-box" />
+  <text x="210" y="155" class="collection-text">Collection:</text>
+  <text x="210" y="175" class="collection-text">"documents"</text>
+
+  <rect x="340" y="120" width="120" height="80" class="collection-active" />
+  <text x="400" y="155" class="active-text">Collection:</text>
+  <text x="400" y="175" class="active-text">"images"</text>
+
+  <rect x="530" y="120" width="120" height="80" class="collection-box" />
+  <text x="590" y="155" class="collection-text">Collection:</text>
+  <text x="590" y="175" class="collection-text">"code"</text>
+  
+  <!-- Connection lines -->
+  <line x1="400" y1="85" x2="210" y2="120" class="connection-line" />
+  <line x1="400" y1="85" x2="400" y2="120" class="connection-line" />
+  <line x1="400" y1="85" x2="590" y2="120" class="connection-line" />
+</svg>

@@ -1,5 +1,7 @@
 # Message Queues
 
+![Message Queue Structure](./images/message-queue-structure.svg)
+
 Message queues, like RabbitMQ are point-to-point communication systems where messages are consumed and removed from the queue.
 
 Common examples include RabbitMQ, Amazon SQS, Azure Service Bus, Apache ActiveMQ.

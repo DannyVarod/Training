@@ -1,5 +1,7 @@
 # Message Topics
 
+![Message Topic Structure](./images/message-topic-structure.svg)
+
 Message topics, like Kafka are publish-subscribe messaging systems where messages are retained and can be consumed by multiple independent applications.
 
 Common examples include Kafka, AWS MSK (Managed Streaming for Apache Kafka), Azure Event Hubs, Google Cloud Pub/Sub.

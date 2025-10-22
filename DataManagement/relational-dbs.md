@@ -1,5 +1,7 @@
 # Relational databases
 
+![Relational Database Structure](./images/relational-db-structure.svg)
+
 Relational databases, or classic databases are databases comprised of the following structure:
 
 - Instance (the server or VM you installed the database engine on or instance of a SaaS you created)
@@ -9,6 +11,8 @@ Relational databases, or classic databases are databases comprised of the follow
                 - Row (the data you store)
 
 Common examples include SQL Server (aka MS-SQL), Postgres, MySQL and more.
+
+![Relational Database Layout](./images/relational-db-layout.svg)
 
 A table is a structure in which you store data with the same structure e.g.
 
@@ -26,8 +30,6 @@ Each item in the table is called a row, which has a value per column (or null if
 Tables use keys and indices (indexes) to enable searching quickly within large datasets.
 
 Data is stored row-by-row, so with a row transversal is fast due to data locality.
-
-![Relational Database Layout](./images/relational-db-layout.svg)
 
 The language used to define the structures and to query the database is called SQL (Structured Query Language).
 

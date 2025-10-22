@@ -1,5 +1,7 @@
 # Vector Databases
 
+![Vector Database Structure](./images/vector-db-structure.svg)
+
 To enable searching textual documents or images by meaning, and not just by keywords, you can use embeddings from large language models (LLMs) such as models from HuggingFace, OpenAI, etc. These embeddings transform text into numeric vectors with hundreds or thousands of dimensions, capturing semantic meaning, so that similar meaning results in similar vectors.
 
 Vector databases store documents and metadata together with these embedding vectors and enable searching for documents with similar meaning to a given input.

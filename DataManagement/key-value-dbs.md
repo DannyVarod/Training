@@ -1,5 +1,7 @@
 # Key-Value databases
 
+![Key-Value Database Structure](./images/key-value-db-structure.svg)
+
 Key-Value Databases, one of the various types of NoSQL databases, have a very simple structure:
 
 - Instance
@@ -14,11 +16,11 @@ To enable this, the number of keys they support is limited (e.g. to 2^32 in Redi
 
 [Wide-column databases](./wide-column-dbs.md) are very similar, however, they are not in memory, they support partitioning of the data and they have other differences too.
 
+![Key-Value Database Layout](./images/key-value-db-layout.svg)
+
 Searching these database is only by key, they do not have other indices.
 
 Nesting of more levels is usually achieved using the convention ":" character within keys, for example:
-
-![Key-Value Database Layout](./images/key-value-db-layout.svg)
 
 ```Redis
 SET my_app:object_type:object_key "value"
