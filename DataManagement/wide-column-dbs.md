@@ -1,6 +1,9 @@
 # Wide-column databases
 
+<a name="image1"></a>
 ![Wide-Column Database Structure](./images/wide-column-db-structure.svg)
+
+[previous image](./key-value-dbs.md#image2), [next image](./wide-column-dbs.md#image2)
 
 Wide-column Databases, one of the various types of NoSQL databases, often have the following structure:
 
@@ -13,7 +16,10 @@ Common examples include BigTable, HBase and Cassandra.
 
 Tables are created with a defined set of tablets.
 
+<a name="image2"></a>
 ![Wide-Column Database Layout](./images/wide-column-db-layout.svg)
+
+[previous image](./wide-column-dbs.md#image1), [next image](./wide-column-dbs.md#image3)
 
 Per tablet, each key can contain any set of columns, similar to a shallow (one-level) document.
 
@@ -40,7 +46,10 @@ Disadvantages:
 - Limited data structures supported i.e. only flat documents
 - Tablets per table cannot be changed after table creation
 
+<a name="image3"></a>
 ![Wide-Column Database Data Partitioning](./images/wide-column-partitioning.svg)
+
+[previous image](./wide-column-dbs.md#image2), [next image](./columnar-dbs.md#image1)
 
 Data partitioned across nodes by device_id + timestamp for temporal locality and horizontal scaling of IoT sensor data.
 

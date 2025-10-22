@@ -1,6 +1,9 @@
 # Columnar databases
 
+<a name="image1"></a>
 ![Columnar Database Structure](./images/columnar-db-structure.svg)
+
+[previous image](./wide-column-dbs.md#image3), [next image](./columnar-dbs.md#image2)
 
 Columnar databases are analytical databases that store data column-by-column rather than row-by-row, optimized for read-heavy analytical workloads and aggregations.
 
@@ -14,7 +17,10 @@ Structure:
 
 Common examples include Databricks Delta, GCP BigQuery, Snowflake.
 
+<a name="image2"></a>
 ![Columnar Database Layout](./images/columnar-db-layout.svg)
+
+[previous image](./columnar-dbs.md#image1), [next image](./message-queues.md#image1)
 
 Like in relational databases, tables have a structure definition, however, unlike relational databases, the data is stored column-wise, not row-wise and unlike relational databases, some databases (e.g. Delta and BigQuery) support defining nested structures and some databases (e.g. RedShift and Snowflake) support unstructured columns as an alternative to this.
 

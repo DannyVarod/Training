@@ -3,7 +3,7 @@
 <a name="image1"></a>
 ![Relational Database Structure](./images/relational-db-structure.svg)
 
-[previous image](./relational-dbs.md#image1), [next image](./relational-dbs.md#image2)
+[next image](./relational-dbs.md#image2)
 
 Relational databases, or classic databases are databases comprised of the following structure:
 

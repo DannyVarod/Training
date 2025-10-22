@@ -1,6 +1,9 @@
 # Distributed File Storage
 
+<a name="image1"></a>
 ![Distributed File Storage Structure](./images/distributed-file-storage-structure.svg)
+
+[previous image](./message-topics.md#image2), [next image](./distributed-file-storage.md#image2)
 
 Distributed file storage systems store files across multiple machines or nodes in a network, providing scalability, redundancy, and fault tolerance. These systems are designed to handle large amounts of data and provide high availability by distributing data across multiple locations.
 
@@ -11,7 +14,10 @@ Common examples include:
 - Amazon S3
 - Azure Blob Storage
 
+<a name="image2"></a>
 ![Distributed File Storage Layout](./images/distributed-file-storage-layout.svg)
+
+[previous image](./distributed-file-storage.md#image1), [next image](./vector-dbs.md#image1)
 
 Key characteristics:
 
