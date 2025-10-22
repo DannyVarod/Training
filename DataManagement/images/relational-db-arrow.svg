@@ -1,0 +1,14 @@
+<svg width="400" height="80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .arrow { fill: #4a90e2; stroke: #4a90e2; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="400" height="80" class="bg" />
+  
+  <!-- Down arrow -->
+  <polygon points="200,60 180,20 190,20 190,10 210,10 210,20 220,20" class="arrow" />
+</svg>

@@ -1,0 +1,194 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .table-border { fill: none; stroke: #4a90e2; stroke-width: 2; }
+      .table-header { fill: #2d3748; stroke: #4a90e2; stroke-width: 1; }
+      .table-row { fill: #f8f9fa; stroke: #4a90e2; stroke-width: 1; }
+      .new-row { fill: #fff3cd; stroke: #ffc107; stroke-width: 2; }
+      .updated-cell { fill: #fff3cd; stroke: #ffc107; stroke-width: 2; }
+      .deleted-row { fill: #f8d7da; stroke: #dc3545; stroke-width: 2; }
+      .table-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .header-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .cell-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #212529; }
+      .invalid-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #dc3545; font-weight: bold; }
+      .fk-arrow { stroke: #4a90e2; stroke-width: 2; fill: none; stroke-dasharray: 5,5; marker-end: url(#arrowhead); }
+      .broken-fk { stroke: #dc3545; stroke-width: 3; fill: none; stroke-dasharray: 3,3; marker-end: url(#redarrowhead); }
+      .constraint-text { font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #81c784; }
+      .violation-text { font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #dc3545; font-weight: bold; }
+      .state-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; fill: #dc3545; }
+    </style>
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#4a90e2" />
+      </marker>
+      <marker id="redarrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#dc3545" />
+      </marker>
+    </defs>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="900" height="600" class="bg" />
+  
+  <!-- State title -->
+  <text x="450" y="30" class="state-title">Transaction Attempt (Invalid Data - Will Rollback)</text>
+  
+  <!-- Users Table -->
+  <rect x="50" y="70" width="240" height="170" class="table-border" />
+  <text x="170" y="60" class="table-title">Users</text>
+  
+  <!-- Users Header -->
+  <rect x="50" y="70" width="60" height="30" class="table-header" />
+  <rect x="110" y="70" width="80" height="30" class="table-header" />
+  <rect x="190" y="70" width="100" height="30" class="table-header" />
+  
+  <text x="80" y="90" class="header-text">UserID</text>
+  <text x="150" y="90" class="header-text">Name</text>
+  <text x="240" y="90" class="header-text">DeptID</text>
+  
+  <!-- Users Rows -->
+  <rect x="50" y="100" width="60" height="30" class="table-row" />
+  <rect x="110" y="100" width="80" height="30" class="updated-cell" />
+  <rect x="190" y="100" width="100" height="30" class="table-row" />
+  
+  <text x="80" y="120" class="cell-text">1</text>
+  <text x="150" y="120" class="invalid-text">Bobby</text>
+  <text x="240" y="120" class="cell-text">1</text>
+  
+  <!-- Deleted row (Sue) -->
+  <rect x="50" y="130" width="60" height="30" class="deleted-row" />
+  <rect x="110" y="130" width="80" height="30" class="deleted-row" />
+  <rect x="190" y="130" width="100" height="30" class="deleted-row" />
+  
+  <text x="80" y="150" style="font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #dc3545; text-decoration: line-through;">2</text>
+  <text x="150" y="150" style="font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #dc3545; text-decoration: line-through;">Sue</text>
+  <text x="240" y="150" style="font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #dc3545; text-decoration: line-through;">2</text>
+  
+  <rect x="50" y="160" width="60" height="30" class="table-row" />
+  <rect x="110" y="160" width="80" height="30" class="table-row" />
+  <rect x="190" y="160" width="100" height="30" class="table-row" />
+  
+  <text x="80" y="180" class="cell-text">3</text>
+  <text x="150" y="180" class="cell-text">Tom</text>
+  <text x="240" y="180" class="cell-text">1</text>
+  
+  <!-- New row with invalid name -->
+  <rect x="50" y="190" width="60" height="30" class="new-row" />
+  <rect x="110" y="190" width="80" height="30" class="new-row" />
+  <rect x="190" y="190" width="100" height="30" class="new-row" />
+  
+  <text x="80" y="210" class="cell-text">4</text>
+  <text x="150" y="210" class="invalid-text">Alexander</text>
+  <text x="240" y="210" class="cell-text">1</text>
+  
+  <rect x="50" y="220" width="60" height="20" class="table-row" />
+  <rect x="110" y="220" width="80" height="20" class="table-row" />
+  <rect x="190" y="220" width="100" height="20" class="table-row" />
+  
+  <!-- Constraint violations -->
+  <text x="50" y="260" class="constraint-text">Constraint: Name length = 3</text>
+  <text x="50" y="275" class="violation-text">✗ VIOLATION: "Bobby" length = 5</text>
+  <text x="50" y="290" class="violation-text">✗ VIOLATION: "Alexander" length = 9</text>
+  
+  <!-- Departments Table -->
+  <rect x="350" y="70" width="200" height="110" class="table-border" />
+  <text x="450" y="60" class="table-title">Departments</text>
+  
+  <!-- Departments Header -->
+  <rect x="350" y="70" width="80" height="30" class="table-header" />
+  <rect x="430" y="70" width="120" height="30" class="table-header" />
+  
+  <text x="390" y="90" class="header-text">DeptID</text>
+  <text x="490" y="90" class="header-text">DeptName</text>
+  
+  <!-- Departments Rows -->
+  <rect x="350" y="100" width="80" height="30" class="table-row" />
+  <rect x="430" y="100" width="120" height="30" class="table-row" />
+  
+  <text x="390" y="120" class="cell-text">1</text>
+  <text x="490" y="120" class="cell-text">IT</text>
+  
+  <rect x="350" y="130" width="80" height="30" class="table-row" />
+  <rect x="430" y="130" width="120" height="30" class="table-row" />
+  
+  <text x="390" y="150" class="cell-text">2</text>
+  <text x="490" y="150" class="cell-text">HR</text>
+  
+  <rect x="350" y="160" width="80" height="20" class="table-row" />
+  <rect x="430" y="160" width="120" height="20" class="table-row" />
+  
+  <!-- Projects Table -->
+  <rect x="300" y="320" width="300" height="170" class="table-border" />
+  <text x="450" y="310" class="table-title">Projects</text>
+  
+  <!-- Projects Header -->
+  <rect x="300" y="320" width="80" height="30" class="table-header" />
+  <rect x="380" y="320" width="120" height="30" class="table-header" />
+  <rect x="500" y="320" width="100" height="30" class="table-header" />
+  
+  <text x="340" y="340" class="header-text">ProjectID</text>
+  <text x="440" y="340" class="header-text">ProjectName</text>
+  <text x="550" y="340" class="header-text">UserID</text>
+  
+  <!-- Projects Rows -->
+  <rect x="300" y="350" width="80" height="30" class="table-row" />
+  <rect x="380" y="350" width="120" height="30" class="table-row" />
+  <rect x="500" y="350" width="100" height="30" class="table-row" />
+  
+  <text x="340" y="370" class="cell-text">1</text>
+  <text x="440" y="370" class="cell-text">Website</text>
+  <text x="550" y="370" class="cell-text">1</text>
+  
+  <!-- Project referencing deleted user -->
+  <rect x="300" y="380" width="80" height="30" class="table-row" />
+  <rect x="380" y="380" width="120" height="30" class="table-row" />
+  <rect x="500" y="380" width="100" height="30" class="table-row" />
+  
+  <text x="340" y="400" class="cell-text">2</text>
+  <text x="440" y="400" class="cell-text">Mobile App</text>
+  <text x="550" y="400" class="invalid-text">2</text>
+  
+  <rect x="300" y="410" width="80" height="30" class="table-row" />
+  <rect x="380" y="410" width="120" height="30" class="table-row" />
+  <rect x="500" y="410" width="100" height="30" class="table-row" />
+  
+  <text x="340" y="430" class="cell-text">3</text>
+  <text x="440" y="430" class="cell-text">Database</text>
+  <text x="550" y="430" class="cell-text">3</text>
+  
+  <!-- New project with invalid FK -->
+  <rect x="300" y="440" width="80" height="30" class="new-row" />
+  <rect x="380" y="440" width="120" height="30" class="new-row" />
+  <rect x="500" y="440" width="100" height="30" class="new-row" />
+  
+  <text x="340" y="460" class="cell-text">4</text>
+  <text x="440" y="460" class="cell-text">Analytics</text>
+  <text x="550" y="460" class="invalid-text">99</text>
+  
+  <rect x="300" y="470" width="80" height="20" class="table-row" />
+  <rect x="380" y="470" width="120" height="20" class="table-row" />
+  <rect x="500" y="470" width="100" height="20" class="table-row" />
+  
+  <!-- Foreign Key Arrows -->
+  <!-- Users.DeptID -> Departments.DeptID (still valid) -->
+  <line x1="290" y1="135" x2="350" y2="135" class="fk-arrow" />
+  
+  <!-- Projects.UserID -> Users.UserID -->
+  <!-- Valid FK: UserID 1 -> UserID 1 -->
+  <line x1="550" y1="370" x2="80" y2="120" class="fk-arrow" />
+  <!-- Broken FK: UserID 2 -> deleted UserID 2 -->
+  <line x1="550" y1="400" x2="80" y2="150" class="broken-fk" />
+  <!-- Valid FK: UserID 3 -> UserID 3 -->
+  <line x1="550" y1="430" x2="80" y2="180" class="fk-arrow" />
+  <!-- Invalid FK: UserID 99 -> no such UserID (red X) -->
+  <text x="575" y="460" style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #dc3545;">✗</text>
+  
+  <!-- FK Labels -->
+  <text x="300" y="125" style="font-family: Arial, sans-serif; font-size: 9px; fill: #4a90e2;">FK</text>
+  <text x="350" y="300" style="font-family: Arial, sans-serif; font-size: 9px; fill: #dc3545;">BROKEN FK</text>
+  
+  <!-- FK violations -->
+  <text x="620" y="400" class="violation-text">✗ UserID 2 deleted</text>
+  <text x="620" y="460" class="violation-text">✗ UserID 99 not exist</text>
+</svg>

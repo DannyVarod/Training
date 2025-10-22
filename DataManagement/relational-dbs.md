@@ -170,6 +170,22 @@ select
 from college.data.Students
 ```
 
+![Relational Database ACID - Initial State](./images/relational-db-acid1.svg)
+
+Valid state with all constraints satisfied and foreign key relationships intact.
+
+![Down Arrow](./images/relational-db-arrow.svg)
+
+![Relational Database ACID - Transaction Attempt](./images/relational-db-acid2.svg)
+
+Transaction attempt violates constraints (name length) and foreign key relationships, causing the entire transaction to be rejected.
+
+![Down Arrow](./images/relational-db-arrow.svg)
+
+![Relational Database ACID - Rollback Complete](./images/relational-db-acid1.svg)
+
+ACID compliance ensures all changes are rolled back, returning to the original valid state.
+
 Relational databases enable adding constraints to data e.g. not null, value of column must be a key in another table, running SQL code on insert / update of row.
 
 Relational database are ACID compliant (Atomicity, Consistency, Isolation, and Durability), this means you can modify data in an "all or nothing" approach, prevent one operation from "breaking" the correctness of another etc.
