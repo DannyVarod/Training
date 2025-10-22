@@ -11,14 +11,14 @@ Common examples include:
 - Amazon S3
 - Azure Blob Storage
 
+![Distributed File Storage Layout](./images/distributed-file-storage-layout.svg)
+
 Key characteristics:
 
 - **Scalability**: Can handle petabytes of data by adding more nodes
 - **Fault tolerance**: Data is replicated across multiple nodes
 - **Consistency models**: Various levels of consistency depending on the system
 - **Access patterns**: Optimized for different use cases (streaming, batch processing, etc.)
-
-![Distributed File Storage Layout](./images/distributed-file-storage-layout.svg)
 
 You can use different file formats for different use cases such as parquet files as a columnar database without updated.
 

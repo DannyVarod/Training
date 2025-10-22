@@ -6,8 +6,6 @@ To enable searching textual documents or images by meaning, and not just by keyw
 
 Vector databases store documents and metadata together with these embedding vectors and enable searching for documents with similar meaning to a given input.
 
-![Vector Database Layout](./images/vector-db-layout.svg)
-
 Vector databases are primarily used for AI/ML applications, particularly those involving embeddings from machine learning models. They are optimized for similarity search and retrieval tasks, making them ideal for applications such as semantic search, recommendation systems, and Retrieval-Augmented Generation (RAG) systems.
 
 Common examples include: ChromaDB, LLamaIndex, Faiss, Weaviate, Pinecone, etc.
@@ -15,6 +13,8 @@ Common examples include: ChromaDB, LLamaIndex, Faiss, Weaviate, Pinecone, etc.
 ## Vector database vs. Elasticsearch
 
 While both vector database and Elasticsearch enable searching documents, they do so in different ways:
+
+![Vector Database Layout](./images/vector-db-layout.svg)
 
 - **Vector Database**: Uses high-dimensional vectors to represent the **semantic meaning** of documents. It excels at finding similar items based on meaning, making it ideal for applications like semantic search and recommendations. It uses distance metrics (like cosine similarity) to find the closest vectors.
 
