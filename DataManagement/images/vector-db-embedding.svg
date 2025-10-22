@@ -1,0 +1,117 @@
+<svg width="1000" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .input-box { fill: #2d3748; stroke: #4a90e2; stroke-width: 2; }
+      .model-box { fill: #1a4d1a; stroke: #81c784; stroke-width: 2; }
+      .vector-box { fill: #4d1a4d; stroke: #9c27b0; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .section-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .input-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: start; fill: #4a90e2; }
+      .model-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #81c784; }
+      .vector-text { font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #9c27b0; }
+      .arrow { stroke: #81c784; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+      .dimension-text { font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #ffc107; }
+    </style>
+    <defs>
+      <marker id="arrowhead" markerWidth="12" markerHeight="9" refX="11" refY="4.5" orient="auto">
+        <polygon points="0 0, 12 4.5, 0 9" fill="#81c784" />
+      </marker>
+    </defs>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="1000" height="500" class="bg" />
+  
+  <!-- Title -->
+  <text x="500" y="30" class="title-text">Vector Database Embedding Process</text>
+  
+  <!-- INPUT SECTION -->
+  <rect x="50" y="70" width="200" height="350" class="input-box" />
+  <text x="150" y="95" class="section-title">Input Data</text>
+  
+  <!-- Text input example -->
+  <text x="60" y="120" class="input-text">Text Document:</text>
+  <text x="60" y="140" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #cbd5e0;">"Machine learning is a subset</text>
+  <text x="60" y="155" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #cbd5e0;">of artificial intelligence that</text>
+  <text x="60" y="170" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #cbd5e0;">enables computers to learn</text>
+  <text x="60" y="185" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #cbd5e0;">and improve from experience"</text>
+  
+  <!-- Image input example -->
+  <text x="60" y="220" class="input-text">Image:</text>
+  <rect x="60" y="230" width="80" height="60" fill="#3d4852" stroke="#4a90e2" stroke-width="1" />
+  <text x="100" y="250" style="font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #666;">Product Photo</text>
+  <text x="100" y="265" style="font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #666;">1920x1080</text>
+  <text x="100" y="280" style="font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #666;">JPEG</text>
+  
+  <!-- Metadata example -->
+  <text x="60" y="320" class="input-text">Metadata:</text>
+  <text x="60" y="340" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #cbd5e0;">Category: "Technology"</text>
+  <text x="60" y="355" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #cbd5e0;">Author: "Dr. Smith"</text>
+  <text x="60" y="370" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #cbd5e0;">Date: "2024-10-15"</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="250" y1="245" x2="320" y2="245" class="arrow" />
+  
+  <!-- ML MODEL SECTION -->
+  <rect x="340" y="70" width="200" height="350" class="model-box" />
+  <text x="440" y="95" class="section-title">ML Model Processing</text>
+  
+  <!-- Model types -->
+  <text x="440" y="120" class="model-text">Embedding Models:</text>
+  
+  <text x="350" y="145" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: start; fill: #a5d6a7;">OpenAI ada-002</text>
+  <text x="350" y="160" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #81c784;">• 1536 dimensions</text>
+  <text x="350" y="175" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #81c784;">• Text → Vector</text>
+  
+  <text x="350" y="200" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: start; fill: #a5d6a7;">HuggingFace BERT</text>
+  <text x="350" y="215" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #81c784;">• 768 dimensions</text>
+  <text x="350" y="230" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #81c784;">• Multilingual support</text>
+  
+  <text x="350" y="255" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: start; fill: #a5d6a7;">CLIP (Images)</text>
+  <text x="350" y="270" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #81c784;">• 512 dimensions</text>
+  <text x="350" y="285" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #81c784;">• Image → Vector</text>
+  
+  <!-- Processing steps -->
+  <text x="440" y="320" class="model-text">Processing Steps:</text>
+  <text x="350" y="340" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #a5d6a7;">1. Tokenization</text>
+  <text x="350" y="355" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #a5d6a7;">2. Neural Network</text>
+  <text x="350" y="370" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #a5d6a7;">3. Embedding Layer</text>
+  <text x="350" y="385" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #a5d6a7;">4. Normalization</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="540" y1="245" x2="610" y2="245" class="arrow" />
+  
+  <!-- OUTPUT VECTOR SECTION -->
+  <rect x="630" y="70" width="320" height="350" class="vector-box" />
+  <text x="790" y="95" class="section-title">Output Vectors</text>
+  
+  <!-- Vector dimensions -->
+  <text x="640" y="120" class="dimension-text">768-Dimensional Vector (BERT example):</text>
+  
+  <!-- Vector values representation -->
+  <text x="640" y="145" class="vector-text">[</text>
+  <text x="650" y="145" class="vector-text">0.1247, -0.8234,  0.5612, -0.2891,  0.7453, -0.1089,</text>
+  <text x="650" y="160" class="vector-text">-0.4567,  0.2134, -0.6789,  0.8901, -0.3456,  0.7891,</text>
+  <text x="650" y="175" class="vector-text"> 0.2345, -0.9876,  0.1234, -0.5678,  0.9012, -0.3456,</text>
+  <text x="650" y="190" class="vector-text">-0.7890,  0.4567, -0.1234,  0.8765, -0.2109,  0.6543,</text>
+  <text x="650" y="205" class="vector-text"> 0.3210, -0.7654,  0.4321, -0.8765,  0.1098, -0.5432,</text>
+  <text x="650" y="220" class="vector-text">-0.2765,  0.8901, -0.4567,  0.2345, -0.7890,  0.1234,</text>
+  <text x="660" y="235" style="font-family: Arial, sans-serif; font-size: 12px; text-anchor: start; fill: #9c27b0;">...</text>
+  <text x="640" y="250" class="vector-text">]</text>
+  
+  <!-- Semantic meaning -->
+  <text x="640" y="280" class="dimension-text">Semantic Representation:</text>
+  <text x="640" y="300" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #c39bd3;">• Captures meaning, not just keywords</text>
+  <text x="640" y="315" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #c39bd3;">• Similar concepts = similar vectors</text>
+  <text x="640" y="330" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #c39bd3;">• Language/context agnostic</text>
+  <text x="640" y="345" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: start; fill: #c39bd3;">• Mathematical distance = similarity</text>
+  
+  <!-- Storage info -->
+  <text x="640" y="375" class="dimension-text">Storage: 768 floats × 4 bytes = 3KB per vector</text>
+  <text x="640" y="395" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #9c27b0;">Indexed for fast similarity search (HNSW, IVF)</text>
+  
+  <!-- Process explanation -->
+  <text x="500" y="460" style="font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; fill: #4a90e2;">Documents transformed into high-dimensional vectors capturing semantic meaning</text>
+  <text x="500" y="480" style="font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #81c784;">Similar meaning → Similar vectors → Fast similarity search using distance metrics</text>
+</svg>

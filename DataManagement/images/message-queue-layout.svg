@@ -72,4 +72,17 @@
   <line x1="660" y1="180" x2="710" y2="180" class="flow-arrow" />
   <text x="685" y="165" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #4a90e2;">DEQUEUE</text>
   
+  <!-- Acknowledgment flow -->
+  <line x1="720" y1="220" x2="660" y2="220" class="flow-arrow" />
+  <text x="690" y="240" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #81c784;">ACK</text>
+  
+  <!-- Processing status -->
+  <rect x="720" y="230" width="120" height="40" fill="#1a4d1a" stroke="#81c784" stroke-width="1" />
+  <text x="780" y="245" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #81c784;">Processing Order #123</text>
+  <text x="780" y="260" style="font-family: Arial, sans-serif; font-size: 8px; text-anchor: middle; fill: #a5d6a7;">Will send ACK when done</text>
+  
+  <!-- Acknowledgment explanation -->
+  <text x="450" y="250" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #4a90e2;">Consumer acknowledges successful processing → Message removed from queue</text>
+  <text x="450" y="265" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #81c784;">Reliable delivery: No ACK = Message returned to queue for retry</text>
+  
 </svg>

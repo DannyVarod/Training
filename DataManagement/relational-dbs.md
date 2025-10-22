@@ -1,6 +1,9 @@
 # Relational databases
 
+<a name="image1"></a>
 ![Relational Database Structure](./images/relational-db-structure.svg)
+
+[previous image](./relational-dbs.md#image1), [next image](./relational-dbs.md#image2)
 
 Relational databases, or classic databases are databases comprised of the following structure:
 
@@ -12,7 +15,10 @@ Relational databases, or classic databases are databases comprised of the follow
 
 Common examples include SQL Server (aka MS-SQL), Postgres, MySQL and more.
 
+<a name="image2"></a>
 ![Relational Database Layout](./images/relational-db-layout.svg)
+
+[previous image](./relational-dbs.md#image1), [next image](./relational-dbs.md#image3)
 
 A table is a structure in which you store data with the same structure e.g.
 
@@ -170,6 +176,7 @@ select
 from college.data.Students
 ```
 
+<a name="image3"></a>
 ![Relational Database ACID - Initial State](./images/relational-db-acid1.svg)
 
 Valid state with all constraints satisfied and foreign key relationships intact.
@@ -183,6 +190,8 @@ Transaction attempt violates constraints (name length) and foreign key relations
 ![Down Arrow](./images/relational-db-arrow.svg)
 
 ![Relational Database ACID - Rollback Complete](./images/relational-db-acid1.svg)
+
+[previous image](./relational-dbs.md#image2), [next image](./document-dbs.md#image1)
 
 ACID compliance ensures all changes are rolled back, returning to the original valid state.
 

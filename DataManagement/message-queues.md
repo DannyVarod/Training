@@ -20,6 +20,10 @@ Message queues often support:
 - Priority queues
 - Delayed/scheduled message delivery
 
+![Priority Queue Implementation](./images/priority-queue.svg)
+
+Priority queues implemented as separate queues per priority level, with consumers processing high priority messages first.
+
 Advantages:
 
 - Simple point-to-point messaging pattern

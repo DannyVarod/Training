@@ -40,6 +40,10 @@ Disadvantages:
 - Limited data structures supported i.e. only flat documents
 - Tablets per table cannot be changed after table creation
 
+![Wide-Column Database Data Partitioning](./images/wide-column-partitioning.svg)
+
+Data partitioned across nodes by device_id + timestamp for temporal locality and horizontal scaling of IoT sensor data.
+
 When to use:
 
 - Flat data only accessed by key
