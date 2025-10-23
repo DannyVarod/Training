@@ -102,5 +102,5 @@ Atomic operations | Uses MongoDB atomic update operators to modify fields | No l
 
 **Navigation:**
 
-- Previous: [Concurrency and relational databases](./concurrency-relational-dbs.md)
-- Next: [Concurrency and key-value databases](./concurrency-key-value-dbs.md)
+- Previous page: [Concurrency and relational databases](./concurrency-relational-dbs.md)
+- Next page: [Concurrency and key-value databases](./concurrency-key-value-dbs.md)

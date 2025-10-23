@@ -1,5 +1,11 @@
 # Key-Value databases
 
+<a id="image1" name="image1"></a>
+
+![Key-Value Database Structure](./images/key-value-db-structure.svg)
+
+[<<](./document-dbs.md#image3), [>>](./key-value-dbs.md#image2)
+
 Key-Value Databases, one of the various types of NoSQL databases, have a very simple structure:
 
 - Instance
@@ -14,11 +20,15 @@ To enable this, the number of keys they support is limited (e.g. to 2^32 in Redi
 
 [Wide-column databases](./wide-column-dbs.md) are very similar, however, they are not in memory, they support partitioning of the data and they have other differences too.
 
+<a id="image2" name="image2"></a>
+
+![Key-Value Database Layout](./images/key-value-db-layout.svg)
+
+[<<](./key-value-dbs.md#image1), [>>](./wide-column-dbs.md#image1)
+
 Searching these database is only by key, they do not have other indices.
 
 Nesting of more levels is usually achieved using the convention ":" character within keys, for example:
-
-![Key-Value Database Layout](./images/key-value-db-layout.svg)
 
 ```Redis
 SET my_app:object_type:object_key "value"
@@ -130,5 +140,5 @@ For best practices on using see [data modelling](./data-modelling-key-values-dbs
 
 **Navigation:**
 
-- Previous: [Document databases](./document-dbs.md)
-- Next: [Wide-columns databases](./wide-column-dbs.md)
+- Previous page: [Document databases](./document-dbs.md)
+- Next page: [Wide-columns databases](./wide-column-dbs.md)

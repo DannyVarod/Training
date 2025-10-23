@@ -1,5 +1,11 @@
 # Wide-column databases
 
+<a id="image1" name="image1"></a>
+
+![Wide-Column Database Structure](./images/wide-column-db-structure.svg)
+
+[<<](./key-value-dbs.md#image2), [>>](./wide-column-dbs.md#image2)
+
 Wide-column Databases, one of the various types of NoSQL databases, often have the following structure:
 
 - Database
@@ -11,9 +17,13 @@ Common examples include BigTable, HBase and Cassandra.
 
 Tables are created with a defined set of tablets.
 
-Per tablet, each key can contain any set of columns, similar to a shallow (one-level) document.
+<a id="image2" name="image2"></a>
 
 ![Wide-Column Database Layout](./images/wide-column-db-layout.svg)
+
+[<<](./wide-column-dbs.md#image1), [>>](./wide-column-dbs.md#image3)
+
+Per tablet, each key can contain any set of columns, similar to a shallow (one-level) document.
 
 In HBase / BigData, the values in columns are stored as binary, so the client code needs to serialize / deserialize values to / from binary.
 
@@ -37,6 +47,14 @@ Disadvantages:
 - Query only by key
 - Limited data structures supported i.e. only flat documents
 - Tablets per table cannot be changed after table creation
+
+<a id="image3" name="image3"></a>
+
+![Wide-Column Database Data Partitioning](./images/wide-column-partitioning.svg)
+
+[<<](./wide-column-dbs.md#image2), [>>](./columnar-dbs.md#image1)
+
+Data partitioned across nodes by device_id + timestamp for temporal locality and horizontal scaling of IoT sensor data.
 
 When to use:
 
@@ -73,5 +91,5 @@ Signs you are misusing:
 
 **Navigation:**
 
-- Previous: [Key-Value databases](./key-value-dbs.md)
-- Next: [Columnar databases](./columnar-dbs.md)
+- Previous page: [Key-Value databases](./key-value-dbs.md)
+- Next page: [Columnar databases](./columnar-dbs.md)

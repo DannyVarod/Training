@@ -1,0 +1,72 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .cluster-box { fill: #2d3748; stroke: #4a90e2; stroke-width: 3; }
+      .replica-set-box { fill: #3d4852; stroke: #4a90e2; stroke-width: 2; }
+      .config-box { fill: #1a1a4d; stroke: #8a8aff; stroke-width: 2; }
+      .primary-box { fill: #2d3914; stroke: #66bb6a; stroke-width: 2; }
+      .secondary-box { fill: #3d4852; stroke: #4a90e2; stroke-width: 2; }
+      .database-box { fill: #4a5568; stroke: #4a90e2; stroke-width: 2; }
+      .collection-box { fill: #2d3748; stroke: #81c784; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .cluster-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .replica-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #cbd5e0; }
+      .config-text { font-family: Arial, sans-serif; font-size: 9px; font-weight: bold; text-anchor: middle; fill: #8a8aff; }
+      .primary-text { font-family: Arial, sans-serif; font-size: 9px; font-weight: bold; text-anchor: middle; fill: #66bb6a; }
+      .secondary-text { font-family: Arial, sans-serif; font-size: 9px; font-weight: bold; text-anchor: middle; fill: #cbd5e0; }
+      .database-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #a0aec0; }
+      .collection-text { font-family: Arial, sans-serif; font-size: 9px; font-weight: bold; text-anchor: middle; fill: #81c784; }
+      .connection-line { stroke: #4a90e2; stroke-width: 2; fill: none; }
+      .router-line { stroke: #8a8aff; stroke-width: 2; fill: none; stroke-dasharray: 3,3; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="450" class="bg" />
+  
+  <!-- Title -->
+  <text x="400" y="25" class="title-text">Document Database Structure</text>
+  
+  <!-- Sharded Cluster Level -->
+  <rect x="50" y="50" width="700" height="370" class="cluster-box" />
+  <text x="400" y="75" class="cluster-text">MongoDB Sharded Cluster</text>
+  
+  <!-- Config Servers + mongos Router (at top) -->
+  <rect x="320" y="100" width="160" height="50" class="config-box" />
+  <text x="400" y="120" class="config-text">Config Servers +</text>
+  <text x="400" y="135" class="config-text">mongos Routers</text>
+  
+  <!-- Shard 1 (Replica Set) -->
+  <rect x="100" y="180" width="280" height="220" class="replica-set-box" />
+  <text x="240" y="205" class="replica-text">Shard 1 (Replica Set)</text>
+  
+  <!-- Primary Instance in Shard 1 (with database inside) -->
+  <rect x="120" y="230" width="100" height="140" class="primary-box" />
+  <text x="170" y="250" class="primary-text">Primary</text>
+  <text x="170" y="270" class="database-text">Database:</text>
+  <text x="170" y="285" class="database-text">"UserData"</text>
+  <!-- Collections inside Primary (side by side) -->
+  <rect x="130" y="310" width="35" height="30" class="collection-box" />
+  <text x="147" y="330" class="collection-text">users</text>
+  <rect x="175" y="310" width="35" height="30" class="collection-box" />
+  <text x="192" y="330" class="collection-text">profiles</text>
+  
+  <!-- Secondary Instances in Shard 1 (side by side) -->
+  <rect x="240" y="230" width="60" height="60" class="secondary-box" />
+  <text x="270" y="265" class="secondary-text">Secondary</text>
+  
+  <rect x="310" y="230" width="60" height="60" class="secondary-box" />
+  <text x="340" y="265" class="secondary-text">Secondary</text>
+  
+  <!-- Shard 2 (Replica Set) - Empty -->
+  <rect x="420" y="180" width="280" height="220" class="replica-set-box" />
+  <text x="560" y="205" class="replica-text">Shard 2 (Replica Set)</text>
+  
+  <!-- Connection lines -->
+  <line x1="400" y1="150" x2="240" y2="180" class="router-line" />
+  <line x1="400" y1="150" x2="560" y2="180" class="router-line" />
+  
+  <line x1="170" y1="290" x2="147" y2="310" class="connection-line" />
+  <line x1="170" y1="290" x2="192" y2="310" class="connection-line" />
+</svg>

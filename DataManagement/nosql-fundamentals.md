@@ -280,4 +280,4 @@ Now that you understand NoSQL fundamentals, you can dive into:
 
 **Navigation:**
 
-- Next: [Database types (and alike)](./database-types.md)
+- Next page: [Database types (and alike)](./database-types.md)

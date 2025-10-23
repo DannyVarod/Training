@@ -308,5 +308,5 @@ for doc in documents:
 
 **Navigation:**
 
-- Previous: [Data modelling and distributed file storage](./data-modelling-distributed-file-storage.md)
-- Next: [Data modelling summary](./data-modelling-summary.md)
+- Previous page: [Data modelling and distributed file storage](./data-modelling-distributed-file-storage.md)
+- Next page: [Data modelling summary](./data-modelling-summary.md)

@@ -1,0 +1,57 @@
+<svg width="800" height="350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .database-box { fill: #2d3748; stroke: #4a90e2; stroke-width: 3; }
+      .table-box { fill: #3d4852; stroke: #4a90e2; stroke-width: 2; }
+      .tablet-box { fill: #2d3748; stroke: #81c784; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .database-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .table-text { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: middle; fill: #cbd5e0; }
+      .tablet-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #81c784; }
+      .connection-line { stroke: #4a90e2; stroke-width: 2; fill: none; }
+      .dashed-line { stroke: #666; stroke-width: 1; fill: none; stroke-dasharray: 5,5; }
+      .note-text { font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #999; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="350" class="bg" />
+  
+  <!-- Title -->
+  <text x="400" y="25" class="title-text">Wide-Column Database Structure</text>
+  
+  <!-- Database Cluster Level -->
+  <rect x="50" y="50" width="700" height="270" class="database-box" />
+  <text x="400" y="75" class="database-text">Wide-Column Database Cluster</text>
+  
+  <!-- Table Level -->
+  <rect x="100" y="120" width="280" height="160" class="table-box" />
+  <text x="240" y="145" class="table-text">Table: "UserActivity"</text>
+  
+  <rect x="420" y="120" width="280" height="160" class="table-box" />
+  <text x="560" y="145" class="table-text">Table: "ProductMetrics"</text>
+  
+  <!-- Tablets in UserActivity (side by side with consistent spacing) -->
+  <rect x="120" y="200" width="70" height="50" class="tablet-box" />
+  <text x="155" y="220" class="tablet-text">Tablet:</text>
+  <text x="155" y="235" class="tablet-text">Profile</text>
+
+  <rect x="205" y="200" width="70" height="50" class="tablet-box" />
+  <text x="240" y="220" class="tablet-text">Tablet:</text>
+  <text x="240" y="235" class="tablet-text">Activity</text>
+
+  <rect x="290" y="200" width="70" height="50" class="tablet-box" />
+  <text x="325" y="220" class="tablet-text">Tablet:</text>
+  <text x="325" y="235" class="tablet-text">Settings</text>
+
+  <!-- ProductMetrics table (empty) -->
+  
+  <!-- Connection lines (top-down tree) -->
+  <line x1="400" y1="85" x2="240" y2="120" class="connection-line" />
+  <line x1="400" y1="85" x2="560" y2="120" class="connection-line" />
+  
+  <line x1="240" y1="155" x2="155" y2="200" class="connection-line" />
+  <line x1="240" y1="155" x2="240" y2="200" class="connection-line" />
+  <line x1="240" y1="155" x2="325" y2="200" class="connection-line" />
+</svg>

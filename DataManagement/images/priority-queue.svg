@@ -1,0 +1,110 @@
+<svg width="800" height="520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .high-priority-border { fill: none; stroke: #dc3545; stroke-width: 3; }
+      .medium-priority-border { fill: none; stroke: #ffc107; stroke-width: 3; }
+      .low-priority-border { fill: none; stroke: #6c757d; stroke-width: 3; }
+      .high-priority-msg { fill: #4d1a1a; stroke: #dc3545; stroke-width: 2; }
+      .medium-priority-msg { fill: #4d3a1a; stroke: #ffc107; stroke-width: 2; }
+      .low-priority-msg { fill: #2d3748; stroke: #6c757d; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .queue-title { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .message-text { font-family: Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #e2e8f0; }
+      .consumer-box { fill: #1a4d1a; stroke: #81c784; stroke-width: 2; }
+      .consumer-text { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: middle; fill: #81c784; }
+      .arrow { stroke: #81c784; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .priority-label { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: start; }
+    </style>
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#81c784" />
+      </marker>
+    </defs>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="520" class="bg" />
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title-text">Priority Queue - Multiple Queue Implementation</text>
+  
+  <!-- HIGH PRIORITY QUEUE -->
+  <text x="60" y="70" class="priority-label" fill="#dc3545">HIGH PRIORITY</text>
+  <rect x="60" y="80" width="400" height="68" class="high-priority-border" />
+  <text x="260" y="100" class="queue-title" fill="#dc3545">Critical Orders Queue</text>
+  
+  <!-- High priority messages -->
+  <rect x="80" y="110" width="70" height="25" class="high-priority-msg" />
+  <text x="115" y="125" class="message-text">URGENT</text>
+  
+  <rect x="160" y="110" width="70" height="25" class="high-priority-msg" />
+  <text x="195" y="125" class="message-text">CRITICAL</text>
+  
+  <rect x="240" y="110" width="70" height="25" class="high-priority-msg" />
+  <text x="275" y="125" class="message-text">EMERGENCY</text>
+  
+  <!-- MEDIUM PRIORITY QUEUE -->
+  <text x="60" y="180" class="priority-label" fill="#ffc107">MEDIUM PRIORITY</text>
+  <rect x="60" y="190" width="400" height="68" class="medium-priority-border" />
+  <text x="260" y="210" class="queue-title" fill="#ffc107">Standard Orders Queue</text>
+  
+  <!-- Medium priority messages -->
+  <rect x="80" y="220" width="70" height="25" class="medium-priority-msg" />
+  <text x="115" y="235" class="message-text">Order #501</text>
+  
+  <rect x="160" y="220" width="70" height="25" class="medium-priority-msg" />
+  <text x="195" y="235" class="message-text">Order #502</text>
+  
+  <rect x="240" y="220" width="70" height="25" class="medium-priority-msg" />
+  <text x="275" y="235" class="message-text">Order #503</text>
+  
+  <rect x="320" y="220" width="70" height="25" class="medium-priority-msg" />
+  <text x="355" y="235" class="message-text">Order #504</text>
+  
+  <rect x="400" y="220" width="40" height="25" class="medium-priority-msg" />
+  <text x="420" y="235" class="message-text">...</text>
+  
+  <!-- LOW PRIORITY QUEUE -->
+  <text x="60" y="290" class="priority-label" fill="#6c757d">LOW PRIORITY</text>
+  <rect x="60" y="300" width="400" height="68" class="low-priority-border" />
+  <text x="260" y="320" class="queue-title" fill="#6c757d">Bulk/Batch Orders Queue</text>
+  
+  <!-- Low priority messages -->
+  <rect x="80" y="330" width="70" height="25" class="low-priority-msg" />
+  <text x="115" y="345" class="message-text">Bulk #001</text>
+  
+  <rect x="160" y="330" width="70" height="25" class="low-priority-msg" />
+  <text x="195" y="345" class="message-text">Bulk #002</text>
+  
+  <rect x="240" y="330" width="70" height="25" class="low-priority-msg" />
+  <text x="275" y="345" class="message-text">Report Gen</text>
+  
+  <rect x="320" y="330" width="70" height="25" class="low-priority-msg" />
+  <text x="355" y="345" class="message-text">Cleanup</text>
+  
+  <rect x="400" y="330" width="40" height="25" class="low-priority-msg" />
+  <text x="420" y="345" class="message-text">...</text>
+  
+  <!-- CONSUMER -->
+  <rect x="540" y="180" width="150" height="100" class="consumer-box" />
+  <text x="615" y="205" class="consumer-text">Message Consumer</text>
+  <text x="615" y="225" class="consumer-text">Processing Order:</text>
+  <text x="615" y="245" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #dc3545;">URGENT</text>
+  <text x="615" y="265" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #a5d6a7;">(from HIGH priority)</text>
+  
+  <!-- Processing order arrows -->
+  <text x="520" y="110" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #dc3545;">1st</text>
+  <line x1="460" y1="110" x2="540" y2="200" class="arrow" />
+  
+  <text x="520" y="215" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #ffc107;">2nd</text>
+  <line x1="460" y1="225" x2="540" y2="230" class="arrow" />
+  
+  <text x="520" y="340" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #6c757d;">3rd</text>
+  <line x1="460" y1="340" x2="540" y2="260" class="arrow" />
+  
+  <!-- Explanation -->
+  <text x="400" y="420" style="font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; fill: #4a90e2;">Consumer processes ALL high priority messages first, then medium, then low priority</text>
+  <text x="400" y="440" style="font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; fill: #81c784;">Each priority level maintains FIFO order within itself</text>
+  <text x="400" y="460" style="font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; fill: #666;">Implementation: Separate queues per priority level with consumer polling in priority order</text>
+</svg>

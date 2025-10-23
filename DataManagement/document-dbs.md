@@ -1,6 +1,18 @@
 # Document databases
 
-Document Databases, one of the various types of NoSQL databases, are comprised of the following structure:
+<a id="image1" name="image1"></a>
+
+![Document Database Structure](./images/document-db-structure.svg)
+
+[<<](./relational-dbs.md#image3), [>>](./document-dbs.md#image2)
+
+Document Databases are one of the various types of NoSQL databases.
+
+Document Databases can have sharding to divide data across multiple instances by key in order to increase throughput of both reads and writes.
+
+Document Databases can have replica sets which enable both redundancy of data and higher throughput of reads by reading from secondary instances.
+
+Document Databases are comprised of the following structure:
 
 - Instance
     - Database
@@ -9,12 +21,16 @@ Document Databases, one of the various types of NoSQL databases, are comprised o
 
 Common examples include MongoDB, Atlas (by MongoDB), AWS DocumentDB, Azure CosmosDB.
 
+<a id="image2" name="image2"></a>
+
+![Document Database Layout](./images/document-db-layout.svg)
+
+[<<](./document-dbs.md#image1), [>>](./document-dbs.md#image3)
+
 Unlike in relation databases, collections do not have a pre-defined structure/schema.
 Theoretically, each document stored in a collection could have completely different fields, however, the assumption is that each database (and of course collection) is behind a single data entry point (e.g. micro-service) which is responsible for the data validity.
 
 Documents are viewed as JSON and stored as BSON (binary form of JSON).
-
-![Document Database Layout](./images/document-db-layout.svg)
 
 Also unlike in relation databases, you do not need to create a database or collection in advance before storing documents.
 
@@ -140,6 +156,14 @@ db_name.collection_name.aggregate([
 ])
 ```
 
+<a id="image3" name="image3"></a>
+
+![Document Database Aggregation Pipeline](./images/document-db-aggregation.svg)
+
+[<<](./document-dbs.md#image2), [>>](./key-value-dbs.md#image1)
+
+Multi-stage aggregation pipeline processing documents through filter, group, and projection stages.
+
 Advantages:
 
 - You can store all relevant data in one place, without splitting into multiple collections due to depth or multiple values
@@ -210,5 +234,5 @@ For best practices on using see [data modelling](./data-modelling-document-dbs.m
 
 **Navigation:**
 
-- Previous: [Relational databases](./relational-dbs.md)
-- Next: [Key-Value databases](./key-value-dbs.md)
+- Previous page: [Relational databases](./relational-dbs.md)
+- Next page: [Key-Value databases](./key-value-dbs.md)

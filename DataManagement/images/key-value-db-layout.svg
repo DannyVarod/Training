@@ -1,4 +1,4 @@
-<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="580" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .bg { fill: #1e1e1e; }
@@ -22,7 +22,7 @@
   </defs>
   
   <!-- Dark background -->
-  <rect x="0" y="0" width="600" height="500" class="bg" />
+  <rect x="0" y="0" width="600" height="580" class="bg" />
   
   <!-- Keys Array Label -->
   <text x="120" y="65" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #4a90e2;">Keys</text>
@@ -84,5 +84,16 @@
   <text x="360" y="440" class="list-text">[100, 85, 92, 78, 95]</text>
   
   <line x1="190" y1="435" x2="350" y2="445" class="arrow" />
+  
+  <!-- Key 6: TTL Example -->
+  <rect x="50" y="490" width="140" height="30" class="key-container" />
+  <text x="120" y="510" class="key-text">cache:temp123</text>
+  
+  <rect x="350" y="490" width="200" height="60" class="value-container" />
+  <text x="360" y="510" class="value-text">"Cached Data Result"</text>
+  <text x="360" y="530" style="font-family: Arial, sans-serif; font-size: 9px; text-anchor: start; fill: #ffc107; font-weight: bold;">TTL: 300 seconds</text>
+  <text x="360" y="545" style="font-family: Arial, sans-serif; font-size: 8px; text-anchor: start; fill: #ff6b6b;">Auto-expires: 2025-01-15 15:45:00</text>
+  
+  <line x1="190" y1="505" x2="350" y2="520" class="arrow" />
   
 </svg>

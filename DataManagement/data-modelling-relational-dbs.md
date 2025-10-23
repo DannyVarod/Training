@@ -244,5 +244,5 @@ Whenever applicable use ISO standards for IDs.
 
 **Navigation:**
 
-- Previous: [Data modelling intro - data types](./data-types.md)
-- Next: [Data modelling and document databases](./data-modelling-document-dbs.md)
+- Previous page: [Data modelling intro - data types](./data-types.md)
+- Next page: [Data modelling and document databases](./data-modelling-document-dbs.md)

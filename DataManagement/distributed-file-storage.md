@@ -1,5 +1,11 @@
 # Distributed File Storage
 
+<a id="image1" name="image1"></a>
+
+![Distributed File Storage Structure](./images/distributed-file-storage-structure.svg)
+
+[<<](./message-topics.md#image2), [>>](./distributed-file-storage.md#image2)
+
 Distributed file storage systems store files across multiple machines or nodes in a network, providing scalability, redundancy, and fault tolerance. These systems are designed to handle large amounts of data and provide high availability by distributing data across multiple locations.
 
 Common examples include:
@@ -9,14 +15,18 @@ Common examples include:
 - Amazon S3
 - Azure Blob Storage
 
+<a id="image2" name="image2"></a>
+
+![Distributed File Storage Layout](./images/distributed-file-storage-layout.svg)
+
+[<<](./distributed-file-storage.md#image1), [>>](./vector-dbs.md#image1)
+
 Key characteristics:
 
 - **Scalability**: Can handle petabytes of data by adding more nodes
 - **Fault tolerance**: Data is replicated across multiple nodes
 - **Consistency models**: Various levels of consistency depending on the system
 - **Access patterns**: Optimized for different use cases (streaming, batch processing, etc.)
-
-![Distributed File Storage Layout](./images/distributed-file-storage-layout.svg)
 
 You can use different file formats for different use cases such as parquet files as a columnar database without updated.
 
@@ -57,5 +67,5 @@ When NOT to use:
 
 **Navigation:**
 
-- Previous: [Message Topics](./message-topics.md)
-- Next: [Vector Databases](./vector-dbs.md)
+- Previous page: [Message Topics](./message-topics.md)
+- Next page: [Vector Databases](./vector-dbs.md)

@@ -12,5 +12,5 @@
 
 **Navigation:**
 
-- Previous: [Indexing](./indexing.md)
-- Next: [Concurrency and relational databases](./concurrency-relational-dbs.md)
+- Previous page: [Indexing](./indexing.md)
+- Next page: [Concurrency and relational databases](./concurrency-relational-dbs.md)

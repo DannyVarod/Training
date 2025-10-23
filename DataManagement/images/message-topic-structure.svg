@@ -1,0 +1,105 @@
+<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .cluster-box { fill: #2d3748; stroke: #4a90e2; stroke-width: 3; }
+      .topic-box { fill: #3d4852; stroke: #4a90e2; stroke-width: 2; }
+      .partition-box { fill: #2d3748; stroke: #81c784; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .cluster-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .topic-text { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: middle; fill: #cbd5e0; }
+      .partition-text { font-family: Arial, sans-serif; font-size: 9px; font-weight: bold; text-anchor: middle; fill: #81c784; }
+      .connection-line { stroke: #4a90e2; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="1000" height="400" class="bg" />
+  
+  <!-- Title -->
+  <text x="500" y="25" class="title-text">Message Topic Structure</text>
+  
+  <!-- Cluster Level -->
+  <rect x="50" y="50" width="900" height="320" class="cluster-box" />
+  <text x="500" y="75" class="cluster-text">Kafka Cluster</text>
+  
+  <!-- Topic Level - Same row with equal spacing -->
+  <rect x="100" y="110" width="240" height="240" class="topic-box" />
+  <text x="220" y="135" class="topic-text">Topic: "user-events"</text>
+  
+  <rect x="380" y="110" width="240" height="240" class="topic-box" />
+  <text x="500" y="135" class="topic-text">Topic: "orders"</text>
+  
+  <rect x="660" y="110" width="240" height="240" class="topic-box" />
+  <text x="780" y="135" class="topic-text">Topic: "analytics"</text>
+  
+  <!-- Partitions in user-events topic (detailed, left-most) - All in same row with equal spacing -->
+  <rect x="120" y="170" width="30" height="50" class="partition-box" />
+  <text x="135" y="195" class="partition-text">P0</text>
+  
+  <rect x="155" y="170" width="30" height="50" class="partition-box" />
+  <text x="170" y="195" class="partition-text">P1</text>
+  
+  <rect x="190" y="170" width="30" height="50" class="partition-box" />
+  <text x="205" y="195" class="partition-text">P2</text>
+  
+  <rect x="225" y="170" width="30" height="50" class="partition-box" />
+  <text x="240" y="195" class="partition-text">P3</text>
+  
+  <rect x="260" y="170" width="30" height="50" class="partition-box" />
+  <text x="275" y="195" class="partition-text">P4</text>
+  
+  <rect x="295" y="170" width="30" height="50" class="partition-box" />
+  <text x="310" y="195" class="partition-text">P5</text>
+  
+  <!-- Partitions in orders topic (simplified) - All in same row with equal spacing -->
+  <rect x="410" y="170" width="35" height="50" class="partition-box" />
+  <text x="427" y="195" class="partition-text">P0</text>
+  
+  <rect x="455" y="170" width="35" height="50" class="partition-box" />
+  <text x="472" y="195" class="partition-text">P1</text>
+  
+  <rect x="500" y="170" width="35" height="50" class="partition-box" />
+  <text x="517" y="195" class="partition-text">P2</text>
+  
+  <rect x="545" y="170" width="35" height="50" class="partition-box" />
+  <text x="562" y="195" class="partition-text">P3</text>
+  
+  <!-- Partitions in analytics topic (simplified) - All in same row with equal spacing -->
+  <rect x="690" y="170" width="35" height="50" class="partition-box" />
+  <text x="707" y="195" class="partition-text">P0</text>
+  
+  <rect x="735" y="170" width="35" height="50" class="partition-box" />
+  <text x="752" y="195" class="partition-text">P1</text>
+  
+  <rect x="780" y="170" width="35" height="50" class="partition-box" />
+  <text x="797" y="195" class="partition-text">P2</text>
+  
+  <rect x="825" y="170" width="35" height="50" class="partition-box" />
+  <text x="842" y="195" class="partition-text">P3</text>
+  
+  <!-- Connection lines -->
+  <line x1="500" y1="85" x2="220" y2="110" class="connection-line" />
+  <line x1="500" y1="85" x2="500" y2="110" class="connection-line" />
+  <line x1="500" y1="85" x2="780" y2="110" class="connection-line" />
+  
+  <!-- User-events topic connections -->
+  <line x1="220" y1="145" x2="135" y2="170" class="connection-line" />
+  <line x1="220" y1="145" x2="170" y2="170" class="connection-line" />
+  <line x1="220" y1="145" x2="205" y2="170" class="connection-line" />
+  <line x1="220" y1="145" x2="240" y2="170" class="connection-line" />
+  <line x1="220" y1="145" x2="275" y2="170" class="connection-line" />
+  <line x1="220" y1="145" x2="310" y2="170" class="connection-line" />
+  
+  <!-- Orders topic connections -->
+  <line x1="500" y1="145" x2="427" y2="170" class="connection-line" />
+  <line x1="500" y1="145" x2="472" y2="170" class="connection-line" />
+  <line x1="500" y1="145" x2="517" y2="170" class="connection-line" />
+  <line x1="500" y1="145" x2="562" y2="170" class="connection-line" />
+  
+  <!-- Analytics topic connections -->
+  <line x1="780" y1="145" x2="707" y2="170" class="connection-line" />
+  <line x1="780" y1="145" x2="752" y2="170" class="connection-line" />
+  <line x1="780" y1="145" x2="797" y2="170" class="connection-line" />
+  <line x1="780" y1="145" x2="842" y2="170" class="connection-line" />
+</svg>

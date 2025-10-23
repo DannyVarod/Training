@@ -1,4 +1,4 @@
-# Database types (and alike)
+# Data Technologies
 
 ## Sub-topics
 
@@ -22,8 +22,10 @@ how you can use each for different use-cases and decide which to use and for wha
 
 Often using more than one for the same solution, each for different purposes can yield the best result.
 
+[>>](./relational-dbs.md#image1)
+
 ---
 
 **Navigation:**
 
-- Next: [Relational databases](./relational-dbs.md)
+- Next page: [Relational databases](./relational-dbs.md)

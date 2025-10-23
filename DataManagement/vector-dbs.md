@@ -1,18 +1,36 @@
 # Vector Databases
 
+<a id="image1" name="image1"></a>
+
+![Vector Database Structure](./images/vector-db-structure.svg)
+
+[<<](./distributed-file-storage.md#image2), [>>](./vector-dbs.md#image2)
+
 To enable searching textual documents or images by meaning, and not just by keywords, you can use embeddings from large language models (LLMs) such as models from HuggingFace, OpenAI, etc. These embeddings transform text into numeric vectors with hundreds or thousands of dimensions, capturing semantic meaning, so that similar meaning results in similar vectors.
 
 Vector databases store documents and metadata together with these embedding vectors and enable searching for documents with similar meaning to a given input.
-
-![Vector Database Layout](./images/vector-db-layout.svg)
 
 Vector databases are primarily used for AI/ML applications, particularly those involving embeddings from machine learning models. They are optimized for similarity search and retrieval tasks, making them ideal for applications such as semantic search, recommendation systems, and Retrieval-Augmented Generation (RAG) systems.
 
 Common examples include: ChromaDB, LLamaIndex, Faiss, Weaviate, Pinecone, etc.
 
+<a id="image2" name="image2"></a>
+
+![Vector Database Embedding Process](./images/vector-db-embedding.svg)
+
+[<<](./vector-dbs.md#image1), [>>](./vector-dbs.md#image3)
+
+Documents and images transformed into high-dimensional vectors using ML models, capturing semantic meaning for similarity search.
+
 ## Vector database vs. Elasticsearch
 
 While both vector database and Elasticsearch enable searching documents, they do so in different ways:
+
+<a id="image3" name="image3"></a>
+
+![Vector Database Layout](./images/vector-db-layout.svg)
+
+[<<](./vector-dbs.md#image2) [>>](./database-types-summary.md#comparison-table)
 
 - **Vector Database**: Uses high-dimensional vectors to represent the **semantic meaning** of documents. It excels at finding similar items based on meaning, making it ideal for applications like semantic search and recommendations. It uses distance metrics (like cosine similarity) to find the closest vectors.
 
@@ -135,5 +153,5 @@ When NOT to use:
 
 **Navigation:**
 
-- Previous: [Distributed File Storage](./distributed-file-storage.md)
-- Next: [Database types summary](./database-types-summary.md)
+- Previous page: [Distributed File Storage](./distributed-file-storage.md)
+- Next page: [Database types summary](./database-types-summary.md)

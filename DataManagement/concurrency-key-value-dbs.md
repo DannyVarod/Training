@@ -79,5 +79,5 @@ Redis atomic hash operations provide the simplest and most reliable approach to 
 
 **Navigation:**
 
-- Previous: [Concurrency and document databases](./concurrency-document-dbs.md)
-- Next: [Concurrency and columnar databases](./concurrency-columnar-dbs.md)
+- Previous page: [Concurrency and document databases](./concurrency-document-dbs.md)
+- Next page: [Concurrency and columnar databases](./concurrency-columnar-dbs.md)

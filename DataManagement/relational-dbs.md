@@ -1,5 +1,11 @@
 # Relational databases
 
+<a id="image1" name="image1"></a>
+
+![Relational Database Structure](./images/relational-db-structure.svg)
+
+[<<](./database-types.md) [>>](./relational-dbs.md#image2)
+
 Relational databases, or classic databases are databases comprised of the following structure:
 
 - Instance (the server or VM you installed the database engine on or instance of a SaaS you created)
@@ -9,6 +15,12 @@ Relational databases, or classic databases are databases comprised of the follow
                 - Row (the data you store)
 
 Common examples include SQL Server (aka MS-SQL), Postgres, MySQL and more.
+
+<a id="image2" name="image2"></a>
+
+![Relational Database Layout](./images/relational-db-layout.svg)
+
+[<<](./relational-dbs.md#image1), [>>](./relational-dbs.md#image3)
 
 A table is a structure in which you store data with the same structure e.g.
 
@@ -26,8 +38,6 @@ Each item in the table is called a row, which has a value per column (or null if
 Tables use keys and indices (indexes) to enable searching quickly within large datasets.
 
 Data is stored row-by-row, so with a row transversal is fast due to data locality.
-
-![Relational Database Layout](./images/relational-db-layout.svg)
 
 The language used to define the structures and to query the database is called SQL (Structured Query Language).
 
@@ -168,6 +178,26 @@ select
 from college.data.Students
 ```
 
+<a id="image3" name="image3"></a>
+
+![Relational Database ACID - Initial State](./images/relational-db-acid1.svg)
+
+Valid state with all constraints satisfied and foreign key relationships intact.
+
+![Down Arrow](./images/relational-db-arrow.svg)
+
+![Relational Database ACID - Transaction Attempt](./images/relational-db-acid2.svg)
+
+Transaction attempt violates constraints (name length) and foreign key relationships, causing the entire transaction to be rejected.
+
+![Down Arrow](./images/relational-db-arrow.svg)
+
+![Relational Database ACID - Rollback Complete](./images/relational-db-acid1.svg)
+
+[<<](./relational-dbs.md#image2), [>>](./document-dbs.md#image1)
+
+ACID compliance ensures all changes are rolled back, returning to the original valid state.
+
 Relational databases enable adding constraints to data e.g. not null, value of column must be a key in another table, running SQL code on insert / update of row.
 
 Relational database are ACID compliant (Atomicity, Consistency, Isolation, and Durability), this means you can modify data in an "all or nothing" approach, prevent one operation from "breaking" the correctness of another etc.
@@ -248,5 +278,5 @@ For best practices on using see [data modelling](./data-modelling-relational-dbs
 
 **Navigation:**
 
-- Previous: [Database types (and alike)](./database-types.md)
-- Next: [Document databases](./document-dbs.md)
+- Previous page: [Database types (and alike)](./database-types.md)
+- Next page: [Document databases](./document-dbs.md)

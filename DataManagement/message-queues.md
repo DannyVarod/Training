@@ -1,10 +1,20 @@
 # Message Queues
 
+<a id="image1" name="image1"></a>
+
+![Message Queue Structure](./images/message-queue-structure.svg)
+
+[<<](./columnar-dbs.md#image2), [>>](./message-queues.md#image2)
+
 Message queues, like RabbitMQ are point-to-point communication systems where messages are consumed and removed from the queue.
 
 Common examples include RabbitMQ, Amazon SQS, Azure Service Bus, Apache ActiveMQ.
 
+<a id="image2" name="image2"></a>
+
 ![Message Queue Layout](./images/message-queue-layout.svg)
+
+[<<](./message-queues.md#image1), [>>](./message-queues.md#image3)
 
 Producers publish their messages to a queue, and consumers retrieve and consume messages from the queue.
 
@@ -17,6 +27,14 @@ Message queues often support:
 - Message TTL (time-to-live)
 - Priority queues
 - Delayed/scheduled message delivery
+
+<a id="image3" name="image3"></a>
+
+![Priority Queue Implementation](./images/priority-queue.svg)
+
+[<<](./message-queues.md#image2), [>>](./message-topics.md#image1)
+
+Priority queues implemented as separate queues per priority level, with consumers processing high priority messages first.
 
 Advantages:
 
@@ -40,5 +58,5 @@ Disadvantages:
 
 **Navigation:**
 
-- Previous: [Columnar databases](./columnar-dbs.md)
-- Next: [Message Topics](./message-topics.md)
+- Previous page: [Columnar databases](./columnar-dbs.md)
+- Next page: [Message Topics](./message-topics.md)

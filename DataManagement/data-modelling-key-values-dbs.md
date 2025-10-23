@@ -16,5 +16,5 @@ For example:
 
 **Navigation:**
 
-- Previous: [Data modelling and document databases](./data-modelling-document-dbs.md)
-- Next: [Data modelling and columnar databases](./data-modelling-columnar-dbs.md)
+- Previous page: [Data modelling and document databases](./data-modelling-document-dbs.md)
+- Next page: [Data modelling and columnar databases](./data-modelling-columnar-dbs.md)

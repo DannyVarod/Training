@@ -91,5 +91,5 @@ The staging table pattern ensures data consistency, prevents duplicates, and han
 
 **Navigation:**
 
-- Previous: [Concurrency and key-value databases](./concurrency-key-value-dbs.md)
-- Next: [Concurrency and databases summary](./concurrency-and-dbs-summary.md)
+- Previous page: [Concurrency and key-value databases](./concurrency-key-value-dbs.md)
+- Next page: [Concurrency and databases summary](./concurrency-and-dbs-summary.md)

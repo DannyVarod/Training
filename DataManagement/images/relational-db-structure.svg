@@ -1,0 +1,78 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .instance-box { fill: #2d3748; stroke: #4a90e2; stroke-width: 3; }
+      .database-box { fill: #3d4852; stroke: #4a90e2; stroke-width: 2; }
+      .database-empty { fill: none; stroke: #4a90e2; stroke-width: 2; }
+      .schema-box { fill: #4a5568; stroke: #4a90e2; stroke-width: 2; stroke-dasharray: 5,5; }
+      .table-box { fill: #2d3748; stroke: #81c784; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #4a90e2; }
+      .instance-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .database-text { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-anchor: middle; fill: #cbd5e0; }
+      .schema-text { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; text-anchor: middle; fill: #e2e8f0; }
+      .table-text { font-family: Arial, sans-serif; font-size: 9px; font-weight: bold; text-anchor: middle; fill: #81c784; }
+      .connection-line { stroke: #4a90e2; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect x="0" y="0" width="800" height="450" class="bg" />
+  
+  <!-- Title -->
+  <text x="400" y="25" class="title-text">Relational Database Structure</text>
+  
+  <!-- Instance Level -->
+  <rect x="50" y="50" width="700" height="370" class="instance-box" />
+  <text x="400" y="75" class="instance-text">Database Instance (Server/VM)</text>
+  
+  <!-- Database Level - First Database -->
+  <rect x="80" y="110" width="400" height="240" class="database-box" />
+  <text x="280" y="135" class="database-text">Database: "CompanyDB"</text>
+  
+  <!-- Database Level - Second Database (empty) -->
+  <rect x="500" y="110" width="220" height="50" class="database-empty" />
+  <text x="610" y="140" class="database-text">Database: "AnalyticsDB"</text>
+  
+  <!-- Schema Level -->
+  <rect x="100" y="170" width="160" height="160" class="schema-box" />
+  <text x="180" y="195" class="schema-text">Schema: "HR"</text>
+  
+  <rect x="280" y="170" width="160" height="160" class="schema-box" />
+  <text x="360" y="195" class="schema-text">Schema: "Sales"</text>
+  
+  <!-- Tables in HR Schema (using table structure with header) -->
+  <rect x="110" y="250" width="70" height="40" class="table-box" />
+  <rect x="110" y="250" width="70" height="12" style="fill: #2d3748; stroke: #81c784; stroke-width: 1;" />
+  <text x="145" y="275" class="table-text">Table:</text>
+  <text x="145" y="285" class="table-text">Employees</text>
+
+  <rect x="180" y="250" width="70" height="40" class="table-box" />
+  <rect x="180" y="250" width="70" height="12" style="fill: #2d3748; stroke: #81c784; stroke-width: 1;" />
+  <text x="215" y="275" class="table-text">Table:</text>
+  <text x="215" y="285" class="table-text">Departments</text>
+
+  <!-- Tables in Sales Schema (using table structure with header) -->
+  <rect x="290" y="250" width="70" height="40" class="table-box" />
+  <rect x="290" y="250" width="70" height="12" style="fill: #2d3748; stroke: #81c784; stroke-width: 1;" />
+  <text x="325" y="275" class="table-text">Table:</text>
+  <text x="325" y="285" class="table-text">Orders</text>
+
+  <rect x="360" y="250" width="70" height="40" class="table-box" />
+  <rect x="360" y="250" width="70" height="12" style="fill: #2d3748; stroke: #81c784; stroke-width: 1;" />
+  <text x="395" y="275" class="table-text">Table:</text>
+  <text x="395" y="285" class="table-text">Customers</text>
+  
+  <!-- Connection lines -->
+  <line x1="400" y1="85" x2="280" y2="110" class="connection-line" />
+  <line x1="400" y1="85" x2="610" y2="110" class="connection-line" />
+  
+  <line x1="280" y1="145" x2="180" y2="170" class="connection-line" />
+  <line x1="280" y1="145" x2="360" y2="170" class="connection-line" />
+  
+  <line x1="180" y1="205" x2="145" y2="250" class="connection-line" />
+  <line x1="180" y1="205" x2="215" y2="250" class="connection-line" />
+  
+  <line x1="360" y1="205" x2="325" y2="250" class="connection-line" />
+  <line x1="360" y1="205" x2="395" y2="250" class="connection-line" />
+</svg>
