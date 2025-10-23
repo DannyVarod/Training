@@ -45,5 +45,5 @@ Add a buffer ==> 20 partitions for this topic.
 
 **Navigation:**
 
-- Previous: [Data modelling and columnar databases](./data-modelling-columnar-dbs.md)
-- Next: [Data modelling and distributed file storage](./data-modelling-distributed-file-storage.md)
+- Previous page: [Data modelling and columnar databases](./data-modelling-columnar-dbs.md)
+- Next page: [Data modelling and distributed file storage](./data-modelling-distributed-file-storage.md)

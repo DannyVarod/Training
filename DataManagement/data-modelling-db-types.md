@@ -16,5 +16,5 @@
 
 **Navigation:**
 
-- Previous: [Database types summary](./database-types-summary.md)
-- Next: [Data modelling intro - data types](./data-types.md)
+- Previous page: [Database types summary](./database-types-summary.md)
+- Next page: [Data modelling intro - data types](./data-types.md)

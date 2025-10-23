@@ -4,7 +4,7 @@
 
 ![Key-Value Database Structure](./images/key-value-db-structure.svg)
 
-[previous image](./document-dbs.md#image3), [next image](./key-value-dbs.md#image2)
+[<<](./document-dbs.md#image3), [>>](./key-value-dbs.md#image2)
 
 Key-Value Databases, one of the various types of NoSQL databases, have a very simple structure:
 
@@ -24,7 +24,7 @@ To enable this, the number of keys they support is limited (e.g. to 2^32 in Redi
 
 ![Key-Value Database Layout](./images/key-value-db-layout.svg)
 
-[previous image](./key-value-dbs.md#image1), [next image](./wide-column-dbs.md#image1)
+[<<](./key-value-dbs.md#image1), [>>](./wide-column-dbs.md#image1)
 
 Searching these database is only by key, they do not have other indices.
 
@@ -140,5 +140,5 @@ For best practices on using see [data modelling](./data-modelling-key-values-dbs
 
 **Navigation:**
 
-- Previous: [Document databases](./document-dbs.md)
-- Next: [Wide-columns databases](./wide-column-dbs.md)
+- Previous page: [Document databases](./document-dbs.md)
+- Next page: [Wide-columns databases](./wide-column-dbs.md)

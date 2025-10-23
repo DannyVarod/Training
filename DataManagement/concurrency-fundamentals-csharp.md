@@ -1285,4 +1285,4 @@ The next sections will show how these concepts apply specifically to different d
 
 **Navigation:**
 
-- Next: [NoSQL Fundamentals for SQL Developers](./nosql-fundamentals.md)
+- Next page: [NoSQL Fundamentals for SQL Developers](./nosql-fundamentals.md)

@@ -255,5 +255,5 @@ Transactional concurrency control | Uses database transactions and locks to ensu
 
 **Navigation:**
 
-- Previous: [Concurrency and databases](./concurrency-and-dbs.md)
-- Next: [Concurrency and document databases](./concurrency-document-dbs.md)
+- Previous page: [Concurrency and databases](./concurrency-and-dbs.md)
+- Next page: [Concurrency and document databases](./concurrency-document-dbs.md)

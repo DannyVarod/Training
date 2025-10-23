@@ -4,7 +4,7 @@
 
 ![Distributed File Storage Structure](./images/distributed-file-storage-structure.svg)
 
-[previous image](./message-topics.md#image2), [next image](./distributed-file-storage.md#image2)
+[<<](./message-topics.md#image2), [>>](./distributed-file-storage.md#image2)
 
 Distributed file storage systems store files across multiple machines or nodes in a network, providing scalability, redundancy, and fault tolerance. These systems are designed to handle large amounts of data and provide high availability by distributing data across multiple locations.
 
@@ -19,7 +19,7 @@ Common examples include:
 
 ![Distributed File Storage Layout](./images/distributed-file-storage-layout.svg)
 
-[previous image](./distributed-file-storage.md#image1), [next image](./vector-dbs.md#image1)
+[<<](./distributed-file-storage.md#image1), [>>](./vector-dbs.md#image1)
 
 Key characteristics:
 
@@ -67,5 +67,5 @@ When NOT to use:
 
 **Navigation:**
 
-- Previous: [Message Topics](./message-topics.md)
-- Next: [Vector Databases](./vector-dbs.md)
+- Previous page: [Message Topics](./message-topics.md)
+- Next page: [Vector Databases](./vector-dbs.md)

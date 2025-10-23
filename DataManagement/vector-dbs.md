@@ -4,7 +4,7 @@
 
 ![Vector Database Structure](./images/vector-db-structure.svg)
 
-[previous image](./distributed-file-storage.md#image2), [next image](./vector-dbs.md#image2)
+[<<](./distributed-file-storage.md#image2), [>>](./vector-dbs.md#image2)
 
 To enable searching textual documents or images by meaning, and not just by keywords, you can use embeddings from large language models (LLMs) such as models from HuggingFace, OpenAI, etc. These embeddings transform text into numeric vectors with hundreds or thousands of dimensions, capturing semantic meaning, so that similar meaning results in similar vectors.
 
@@ -18,7 +18,7 @@ Common examples include: ChromaDB, LLamaIndex, Faiss, Weaviate, Pinecone, etc.
 
 ![Vector Database Embedding Process](./images/vector-db-embedding.svg)
 
-[previous image](./vector-dbs.md#image1), [next image](./vector-dbs.md#image3)
+[<<](./vector-dbs.md#image1), [>>](./vector-dbs.md#image3)
 
 Documents and images transformed into high-dimensional vectors using ML models, capturing semantic meaning for similarity search.
 
@@ -30,7 +30,7 @@ While both vector database and Elasticsearch enable searching documents, they do
 
 ![Vector Database Layout](./images/vector-db-layout.svg)
 
-[previous image](./vector-dbs.md#image2)
+[<<](./vector-dbs.md#image2) [>>](./database-types-summary.md#comparison-table)
 
 - **Vector Database**: Uses high-dimensional vectors to represent the **semantic meaning** of documents. It excels at finding similar items based on meaning, making it ideal for applications like semantic search and recommendations. It uses distance metrics (like cosine similarity) to find the closest vectors.
 
@@ -153,5 +153,5 @@ When NOT to use:
 
 **Navigation:**
 
-- Previous: [Distributed File Storage](./distributed-file-storage.md)
-- Next: [Database types summary](./database-types-summary.md)
+- Previous page: [Distributed File Storage](./distributed-file-storage.md)
+- Next page: [Database types summary](./database-types-summary.md)

@@ -60,5 +60,5 @@ Consider using a management layer to abstract the storage as a data lake e.g. Da
 
 **Navigation:**
 
-- Previous: [Data modelling and messages](./data-modelling-messages.md)
-- Next: [Data modelling and vector databases](./data-modelling-vector-dbs.md)
+- Previous page: [Data modelling and messages](./data-modelling-messages.md)
+- Next page: [Data modelling and vector databases](./data-modelling-vector-dbs.md)

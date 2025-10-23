@@ -36,5 +36,5 @@ See rules for choosing primary keys and naming columns in [Data Modelling and Re
 
 **Navigation:**
 
-- Previous: [Data modelling and key-value databases](./data-modelling-key-values-dbs.md)
-- Next: [Data modelling and messages](./data-modelling-messages.md)
+- Previous page: [Data modelling and key-value databases](./data-modelling-key-values-dbs.md)
+- Next page: [Data modelling and messages](./data-modelling-messages.md)

@@ -4,7 +4,7 @@
 
 ![Document Database Structure](./images/document-db-structure.svg)
 
-[previous image](./relational-dbs.md#image3), [next image](./document-dbs.md#image2)
+[<<](./relational-dbs.md#image3), [>>](./document-dbs.md#image2)
 
 Document Databases are one of the various types of NoSQL databases.
 
@@ -25,7 +25,7 @@ Common examples include MongoDB, Atlas (by MongoDB), AWS DocumentDB, Azure Cosmo
 
 ![Document Database Layout](./images/document-db-layout.svg)
 
-[previous image](./document-dbs.md#image1), [next image](./document-dbs.md#image3)
+[<<](./document-dbs.md#image1), [>>](./document-dbs.md#image3)
 
 Unlike in relation databases, collections do not have a pre-defined structure/schema.
 Theoretically, each document stored in a collection could have completely different fields, however, the assumption is that each database (and of course collection) is behind a single data entry point (e.g. micro-service) which is responsible for the data validity.
@@ -160,7 +160,7 @@ db_name.collection_name.aggregate([
 
 ![Document Database Aggregation Pipeline](./images/document-db-aggregation.svg)
 
-[previous image](./document-dbs.md#image2), [next image](./key-value-dbs.md#image1)
+[<<](./document-dbs.md#image2), [>>](./key-value-dbs.md#image1)
 
 Multi-stage aggregation pipeline processing documents through filter, group, and projection stages.
 
@@ -234,5 +234,5 @@ For best practices on using see [data modelling](./data-modelling-document-dbs.m
 
 **Navigation:**
 
-- Previous: [Relational databases](./relational-dbs.md)
-- Next: [Key-Value databases](./key-value-dbs.md)
+- Previous page: [Relational databases](./relational-dbs.md)
+- Next page: [Key-Value databases](./key-value-dbs.md)

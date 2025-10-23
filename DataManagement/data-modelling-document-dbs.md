@@ -58,5 +58,5 @@ Polymorphism is OK, you can store similar classes in the same collection if they
 
 **Navigation:**
 
-- Previous: [Data modelling and relational databases](./data-modelling-relational-dbs.md)
-- Next: [Data modelling and key-value databases](./data-modelling-key-values-dbs.md)
+- Previous page: [Data modelling and relational databases](./data-modelling-relational-dbs.md)
+- Next page: [Data modelling and key-value databases](./data-modelling-key-values-dbs.md)

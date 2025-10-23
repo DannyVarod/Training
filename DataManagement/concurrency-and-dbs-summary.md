@@ -247,5 +247,5 @@ By applying these principles and using the appropriate patterns for each databas
 
 **Navigation:**
 
-- Previous: [Concurrency and columnar databases](./concurrency-columnar-dbs.md)
-- Next: [Testing](./testing.md)
+- Previous page: [Concurrency and columnar databases](./concurrency-columnar-dbs.md)
+- Next page: [Testing](./testing.md)

@@ -342,5 +342,5 @@ Additional hidden costs:
 
 **Navigation:**
 
-- Previous: [Data modelling and vector databases](./data-modelling-vector-dbs.md)
-- Next: [Indexing](./indexing.md)
+- Previous page: [Data modelling and vector databases](./data-modelling-vector-dbs.md)
+- Next page: [Indexing](./indexing.md)

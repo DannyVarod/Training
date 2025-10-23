@@ -579,5 +579,5 @@ If you have a long-running query, profile/inspect it to see how it searches for 
 
 **Navigation:**
 
-- Previous: [Data modelling summary](./data-modelling-summary.md)
-- Next: [Concurrency and databases](./concurrency-and-dbs.md)
+- Previous page: [Data modelling summary](./data-modelling-summary.md)
+- Next page: [Concurrency and databases](./concurrency-and-dbs.md)

@@ -16,6 +16,8 @@ This section provides a comprehensive comparison of different database and stora
 | **Distributed File Storage** | S3, HDFS, Azure Blob | Large file and binary storage | Massive scale, cost-effective, durability | High latency, eventual consistency, no queries | Backup, media storage, data lakes, archiving | Frequent updates, low latency access, structured queries |
 | **Vector** | ChromaDB, Pinecone, Weaviate | AI/ML similarity search and embeddings | Fast similarity search, purpose-built for AI/ML, advanced indexing | Limited to similarity queries, memory intensive, approximate results | Semantic search, recommendations, RAG systems, content similarity | Exact match queries, traditional relational operations, small datasets |
 
+[<<](./vector-dbs.md#image3)
+
 ## Decision Matrix
 
 ### By Use Case
@@ -129,5 +131,5 @@ This section provides a comprehensive comparison of different database and stora
 
 **Navigation:**
 
-- Previous: [Vector Databases](./vector-dbs.md)
-- Next: [Data modelling and database types](./data-modelling-db-types.md)
+- Previous page: [Vector Databases](./vector-dbs.md)
+- Next page: [Data modelling and database types](./data-modelling-db-types.md)

@@ -4,7 +4,7 @@
 
 ![Message Topic Structure](./images/message-topic-structure.svg)
 
-[previous image](./message-queues.md#image3), [next image](./message-topics.md#image2)
+[<<](./message-queues.md#image3), [>>](./message-topics.md#image2)
 
 Message topics, like Kafka are publish-subscribe messaging systems where messages are retained and can be consumed by multiple independent applications.
 
@@ -14,7 +14,7 @@ Common examples include Kafka, AWS MSK (Managed Streaming for Apache Kafka), Azu
 
 ![Message Topic Layout](./images/message-topic-layout.svg)
 
-[previous image](./message-topics.md#image1), [next image](./distributed-file-storage.md#image1)
+[<<](./message-topics.md#image1), [>>](./distributed-file-storage.md#image1)
 
 Producers publish their messages to a topic, which keeps all message storage for a given duration (retention set per topic in days).
 
@@ -107,5 +107,5 @@ Spotify uses Kafka to handle music streaming events, user interactions, and reco
 
 **Navigation:**
 
-- Previous: [Message Queues](./message-queues.md)
-- Next: [Distributed File Storage](./distributed-file-storage.md)
+- Previous page: [Message Queues](./message-queues.md)
+- Next page: [Distributed File Storage](./distributed-file-storage.md)

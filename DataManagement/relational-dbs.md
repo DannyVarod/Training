@@ -4,7 +4,7 @@
 
 ![Relational Database Structure](./images/relational-db-structure.svg)
 
-[next image](./relational-dbs.md#image2)
+[<<](./database-types.md) [>>](./relational-dbs.md#image2)
 
 Relational databases, or classic databases are databases comprised of the following structure:
 
@@ -20,7 +20,7 @@ Common examples include SQL Server (aka MS-SQL), Postgres, MySQL and more.
 
 ![Relational Database Layout](./images/relational-db-layout.svg)
 
-[previous image](./relational-dbs.md#image1), [next image](./relational-dbs.md#image3)
+[<<](./relational-dbs.md#image1), [>>](./relational-dbs.md#image3)
 
 A table is a structure in which you store data with the same structure e.g.
 
@@ -194,7 +194,7 @@ Transaction attempt violates constraints (name length) and foreign key relations
 
 ![Relational Database ACID - Rollback Complete](./images/relational-db-acid1.svg)
 
-[previous image](./relational-dbs.md#image2), [next image](./document-dbs.md#image1)
+[<<](./relational-dbs.md#image2), [>>](./document-dbs.md#image1)
 
 ACID compliance ensures all changes are rolled back, returning to the original valid state.
 
@@ -278,5 +278,5 @@ For best practices on using see [data modelling](./data-modelling-relational-dbs
 
 **Navigation:**
 
-- Previous: [Database types (and alike)](./database-types.md)
-- Next: [Document databases](./document-dbs.md)
+- Previous page: [Database types (and alike)](./database-types.md)
+- Next page: [Document databases](./document-dbs.md)
