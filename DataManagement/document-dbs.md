@@ -1,6 +1,7 @@
 # Document databases
 
 <a name="image1"></a>
+
 ![Document Database Structure](./images/document-db-structure.svg)
 
 [previous image](./relational-dbs.md#image3), [next image](./document-dbs.md#image2)
@@ -21,6 +22,7 @@ Document Databases are comprised of the following structure:
 Common examples include MongoDB, Atlas (by MongoDB), AWS DocumentDB, Azure CosmosDB.
 
 <a name="image2"></a>
+
 ![Document Database Layout](./images/document-db-layout.svg)
 
 [previous image](./document-dbs.md#image1), [next image](./document-dbs.md#image3)
@@ -155,6 +157,7 @@ db_name.collection_name.aggregate([
 ```
 
 <a name="image3"></a>
+
 ![Document Database Aggregation Pipeline](./images/document-db-aggregation.svg)
 
 [previous image](./document-dbs.md#image2), [next image](./key-value-dbs.md#image1)

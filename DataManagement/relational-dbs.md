@@ -1,6 +1,7 @@
 # Relational databases
 
 <a name="image1"></a>
+
 ![Relational Database Structure](./images/relational-db-structure.svg)
 
 [next image](./relational-dbs.md#image2)
@@ -16,6 +17,7 @@ Relational databases, or classic databases are databases comprised of the follow
 Common examples include SQL Server (aka MS-SQL), Postgres, MySQL and more.
 
 <a name="image2"></a>
+
 ![Relational Database Layout](./images/relational-db-layout.svg)
 
 [previous image](./relational-dbs.md#image1), [next image](./relational-dbs.md#image3)
@@ -177,6 +179,7 @@ from college.data.Students
 ```
 
 <a name="image3"></a>
+
 ![Relational Database ACID - Initial State](./images/relational-db-acid1.svg)
 
 Valid state with all constraints satisfied and foreign key relationships intact.

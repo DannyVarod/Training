@@ -1,6 +1,7 @@
 # Columnar databases
 
 <a name="image1"></a>
+
 ![Columnar Database Structure](./images/columnar-db-structure.svg)
 
 [previous image](./wide-column-dbs.md#image3), [next image](./columnar-dbs.md#image2)
@@ -18,6 +19,7 @@ Structure:
 Common examples include Databricks Delta, GCP BigQuery, Snowflake.
 
 <a name="image2"></a>
+
 ![Columnar Database Layout](./images/columnar-db-layout.svg)
 
 [previous image](./columnar-dbs.md#image1), [next image](./message-queues.md#image1)

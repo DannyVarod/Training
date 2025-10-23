@@ -1,6 +1,7 @@
 # Wide-column databases
 
 <a name="image1"></a>
+
 ![Wide-Column Database Structure](./images/wide-column-db-structure.svg)
 
 [previous image](./key-value-dbs.md#image2), [next image](./wide-column-dbs.md#image2)
@@ -17,6 +18,7 @@ Common examples include BigTable, HBase and Cassandra.
 Tables are created with a defined set of tablets.
 
 <a name="image2"></a>
+
 ![Wide-Column Database Layout](./images/wide-column-db-layout.svg)
 
 [previous image](./wide-column-dbs.md#image1), [next image](./wide-column-dbs.md#image3)
@@ -47,6 +49,7 @@ Disadvantages:
 - Tablets per table cannot be changed after table creation
 
 <a name="image3"></a>
+
 ![Wide-Column Database Data Partitioning](./images/wide-column-partitioning.svg)
 
 [previous image](./wide-column-dbs.md#image2), [next image](./columnar-dbs.md#image1)

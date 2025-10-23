@@ -1,6 +1,7 @@
 # Vector Databases
 
 <a name="image1"></a>
+
 ![Vector Database Structure](./images/vector-db-structure.svg)
 
 [previous image](./distributed-file-storage.md#image2), [next image](./vector-dbs.md#image2)
@@ -14,6 +15,7 @@ Vector databases are primarily used for AI/ML applications, particularly those i
 Common examples include: ChromaDB, LLamaIndex, Faiss, Weaviate, Pinecone, etc.
 
 <a name="image2"></a>
+
 ![Vector Database Embedding Process](./images/vector-db-embedding.svg)
 
 [previous image](./vector-dbs.md#image1), [next image](./vector-dbs.md#image3)
@@ -25,6 +27,7 @@ Documents and images transformed into high-dimensional vectors using ML models, 
 While both vector database and Elasticsearch enable searching documents, they do so in different ways:
 
 <a name="image3"></a>
+
 ![Vector Database Layout](./images/vector-db-layout.svg)
 
 [previous image](./vector-dbs.md#image2)
