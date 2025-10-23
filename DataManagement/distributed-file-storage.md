@@ -1,6 +1,6 @@
 # Distributed File Storage
 
-<a name="image1"></a>
+<a name="image1" id="image1"></a>
 
 ![Distributed File Storage Structure](./images/distributed-file-storage-structure.svg)
 
@@ -15,7 +15,7 @@ Common examples include:
 - Amazon S3
 - Azure Blob Storage
 
-<a name="image2"></a>
+<a name="image2" id="image2"></a>
 
 ![Distributed File Storage Layout](./images/distributed-file-storage-layout.svg)
 
