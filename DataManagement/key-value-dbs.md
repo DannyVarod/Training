@@ -1,6 +1,6 @@
 # Key-Value databases
 
-<a name="image1" id="image1"></a>
+<a id="image1" name="image1"></a>
 
 ![Key-Value Database Structure](./images/key-value-db-structure.svg)
 
@@ -20,7 +20,7 @@ To enable this, the number of keys they support is limited (e.g. to 2^32 in Redi
 
 [Wide-column databases](./wide-column-dbs.md) are very similar, however, they are not in memory, they support partitioning of the data and they have other differences too.
 
-<a name="image2" id="image2"></a>
+<a id="image2" name="image2"></a>
 
 ![Key-Value Database Layout](./images/key-value-db-layout.svg)
 

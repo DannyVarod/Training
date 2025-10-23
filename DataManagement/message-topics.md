@@ -1,6 +1,6 @@
 # Message Topics
 
-<a name="image1" id="image1"></a>
+<a id="image1" name="image1"></a>
 
 ![Message Topic Structure](./images/message-topic-structure.svg)
 
@@ -10,7 +10,7 @@ Message topics, like Kafka are publish-subscribe messaging systems where message
 
 Common examples include Kafka, AWS MSK (Managed Streaming for Apache Kafka), Azure Event Hubs, Google Cloud Pub/Sub.
 
-<a name="image2" id="image2"></a>
+<a id="image2" name="image2"></a>
 
 ![Message Topic Layout](./images/message-topic-layout.svg)
 

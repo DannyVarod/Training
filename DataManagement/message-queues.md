@@ -1,6 +1,6 @@
 # Message Queues
 
-<a name="image1" id="image1"></a>
+<a id="image1" name="image1"></a>
 
 ![Message Queue Structure](./images/message-queue-structure.svg)
 
@@ -10,7 +10,7 @@ Message queues, like RabbitMQ are point-to-point communication systems where mes
 
 Common examples include RabbitMQ, Amazon SQS, Azure Service Bus, Apache ActiveMQ.
 
-<a name="image2" id="image2"></a>
+<a id="image2" name="image2"></a>
 
 ![Message Queue Layout](./images/message-queue-layout.svg)
 
@@ -28,7 +28,7 @@ Message queues often support:
 - Priority queues
 - Delayed/scheduled message delivery
 
-<a name="image3" id="image3"></a>
+<a id="image3" name="image3"></a>
 
 ![Priority Queue Implementation](./images/priority-queue.svg)
 

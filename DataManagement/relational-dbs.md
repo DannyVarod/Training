@@ -1,6 +1,6 @@
 # Relational databases
 
-<a name="image1" id="image1"></a>
+<a id="image1" name="image1"></a>
 
 ![Relational Database Structure](./images/relational-db-structure.svg)
 
@@ -16,7 +16,7 @@ Relational databases, or classic databases are databases comprised of the follow
 
 Common examples include SQL Server (aka MS-SQL), Postgres, MySQL and more.
 
-<a name="image2" id="image2"></a>
+<a id="image2" name="image2"></a>
 
 ![Relational Database Layout](./images/relational-db-layout.svg)
 
@@ -178,7 +178,7 @@ select
 from college.data.Students
 ```
 
-<a name="image3" id="image3"></a>
+<a id="image3" name="image3"></a>
 
 ![Relational Database ACID - Initial State](./images/relational-db-acid1.svg)
 
